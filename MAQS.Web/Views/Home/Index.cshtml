@@ -34,11 +34,11 @@
                                placeholder="Search by company name, contact, city, state, zip, code ... etc" />
                         <button class="modal-button">
                             <img class="filter" data-toggle="modal" data-target="#searchModal"
-                                 src="../Images/Vector.png" alt="Advanced Filter" @*@onclick="ShowSearchPanel"*@ />
+                                 src="../Images/Vector.png" alt="Advanced Filter" id="advancedFilter" onclick="ontoggle(this)"/>
                         </button>
                     </div>
 
-                    <div class="search-box" hidden="true">
+                    <div class="search-box" id="searchPanel" >
                         <img class="img-dimension" src="../Images/SearchPanel.png">
 
                         <div class="overlay-text">
@@ -825,3 +825,18 @@
         </div>
     </footer>
 </section>
+
+<script type="text/javascript">
+
+    const handleBtn = document.getElementById("advancedFilter");
+    const handleDiv = document.getElementById("searchPanel");
+    
+    handleBtn.addEventListener('click', function handleClick(){
+        if (handleDiv.style.visibility === 'hidden'){
+            handleDiv.style.visibility = 'visible';
+        }else{
+            handleDiv.style.visibility = 'hidden';
+        }
+    })
+
+</script>
