@@ -13,7 +13,7 @@
                                placeholder="Search by company name, contact, city, state, zip, code ... etc" />
                         <button class="modal-button">
                             <img class="filter" data-toggle="modal" data-target="#searchModal"
-                                 src="../Images/Vector.png" alt="Advanced Filter" @*@onclick="ShowSearchPanel"*@ />
+                                 src="../Images/Vector.png" alt="Advanced Filter" id="advancedFilter" onclick="ontoggle(this)"/>
                         </button>
                     </div>
                     <div class="search-box" hidden>
@@ -803,12 +803,3 @@
         </div>
     </footer>
 </section>
-@section Scripts{
-    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#tblCorp').DataTable()
-        }
-                                        });
-    </script>
-}
