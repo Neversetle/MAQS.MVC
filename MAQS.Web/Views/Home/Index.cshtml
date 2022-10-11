@@ -1,8 +1,827 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    //ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section>
+    <header>
+        <div class="container-fluid">
+            <div class="row header-height">
+                <div class="col-lg-6 company-name text-left">
+                    <p>
+                        <span class="font-weight-normal">
+                            <span class="letter-R">R</span><span class="letter-C">C</span><span class="letter-I">I</span>
+                        </span>
+                        <span class="vertical-line">|</span>
+                        <span class="project-name font-weight-bold">Archived Quotes Search</span>
+                    </p>
+                </div>
+                <div class="col-lg-6 user-name text-right">
+                    <p>
+                        Phil Blake <img class="profilePhoto" src="../Images/Profile.png" alt="Profile Photo" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="maqs-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div>
+                        <input type="text" class="SearchBar"
+                               placeholder="Search by company name, contact, city, state, zip, code ... etc" />
+                        <button class="modal-button">
+                            <img class="filter" data-toggle="modal" data-target="#searchModal"
+                                 src="../Images/Vector.png" alt="Advanced Filter" @*@onclick="ShowSearchPanel"*@ />
+                        </button>
+                    </div>
+
+                    <div class="search-box" hidden="true">
+                        <img class="img-dimension" src="../Images/SearchPanel.png">
+
+                        <div class="overlay-text">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p>Company</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>State</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>City</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>Contact</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p>Zip code</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>Email ID</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>Date</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <p>MM</p>
+                                    <input class="maqs-input-field" type="text" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-sm-12 text-right">
+                                    <button type="button" class="btn maqs-secondary-btn">Clear</button>
+                                    <button type="submit" class="btn maqs-primary-btn" @*@onclick="SearchContent"*@>
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="company-contact">
+                        <div class="row add-margin">
+                            <div class="col-lg-4">
+                                <p class="company-title">Company Contacts</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="company-search" placeholder="Search" />
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <p class="company-records">Total Records: <b>254</b></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="company-table-scrollbar scrollbar-style">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Contact</th>
+                                                <th>Title</th>
+                                                <th>Address</th>
+                                                <th>Suite</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Amazon</td>
+                                                <td>Darlene Robertson</td>
+                                                <td>Manager</td>
+                                                <td>2972, Illinois 85486</td>
+                                                <td>NA</td>
+                                                <td>Banglore</td>
+                                                <td>WY</td>
+                                                <td>44083847</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Amazon</td>
+                                                <td>Jerome Bell</td>
+                                                <td>President of Sales</td>
+                                                <td>1901, Hawaii 81063</td>
+                                                <td>474</td>
+                                                <td>Ohio</td>
+                                                <td>DC</td>
+                                                <td>26538288</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Zomato</td>
+                                                <td>Brooklyn Simmon</td>
+                                                <td>Nursing Assistant</td>
+                                                <td>3891, California 6...</td>
+                                                <td>NA</td>
+                                                <td>Hong Kong</td>
+                                                <td>CO</td>
+                                                <td>07203604</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Swiggy</td>
+                                                <td>Kristin Watson</td>
+                                                <td>Web Designer</td>
+                                                <td>2118, Connecticut...</td>
+                                                <td>Suite 271</td>
+                                                <td>Berlin</td>
+                                                <td>ME</td>
+                                                <td>82511326</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Airtel</td>
+                                                <td>Esther Howard</td>
+                                                <td>Marketing Coordinator</td>
+                                                <td>6391, Delaware 1...</td>
+                                                <td>NA</td>
+                                                <td>San Francisco</td>
+                                                <td>NY</td>
+                                                <td>11358113</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jio</td>
+                                                <td>Darrell Steward</td>
+                                                <td>President of Sales</td>
+                                                <td>4140, New Mexic...</td>
+                                                <td>Suite 122</td>
+                                                <td>New Delhi</td>
+                                                <td>TX</td>
+                                                <td>16068520</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Samsung</td>
+                                                <td>Devon Lane</td>
+                                                <td>Dog Trainer</td>
+                                                <td>2464, New Jerse...</td>
+                                                <td>Suite 456</td>
+                                                <td>New York</td>
+                                                <td>KY</td>
+                                                <td>43007757</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sony</td>
+                                                <td>Ralph Edwards</td>
+                                                <td>Dog Trainer</td>
+                                                <td>2715, South Dako...</td>
+                                                <td>NA</td>
+                                                <td>Vancouver</td>
+                                                <td>IL</td>
+                                                <td>78039826</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apple</td>
+                                                <td>Annette Black</td>
+                                                <td>Medical Assistant</td>
+                                                <td>6391, Delaware ...</td>
+                                                <td>NA</td>
+                                                <td>Chile</td>
+                                                <td>RI</td>
+                                                <td>40345178</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Flipkart</td>
+                                                <td>Jacob Jones</td>
+                                                <td>Nursing Assistant</td>
+                                                <td>8502, Maine 983...</td>
+                                                <td>NA</td>
+                                                <td>Silicon Valley</td>
+                                                <td>SD</td>
+                                                <td>27517343</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apple</td>
+                                                <td>Annette Black</td>
+                                                <td>Medical Assistant</td>
+                                                <td>6391, Delaware...</td>
+                                                <td>NA</td>
+                                                <td>Chile</td>
+                                                <td>RI</td>
+                                                <td>40345178</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Flipkart</td>
+                                                <td>Jacob Jones</td>
+                                                <td>Nursing Assistant</td>
+                                                <td>8502, Maine 983...</td>
+                                                <td>NA</td>
+                                                <td>Silicon Valley</td>
+                                                <td>SD</td>
+                                                <td>27517343</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-container">
+                        <p>Contact</p>
+
+                        <div class="contact-inner-container scrollbar-style">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>Swiggy</td>
+                                        <th>Contact</th>
+                                        <td>Kristin Watson</td>
+                                        <th>Title</th>
+                                        <td>Web Designer</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Suit</th>
+                                        <td>NA</td>
+                                        <th>State</th>
+                                        <td>ME</td>
+                                        <th>City</th>
+                                        <td>Berlin</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone No.</th>
+                                        <td>1234567890</td>
+                                        <th>Alt. No</th>
+                                        <td>NA</td>
+                                        <th>URL Web</th>
+                                        <td>www.swiggy.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="notes-container">
+                        <div class="row">
+                            <div class="col-lg-4 notes-title">
+                                <p>Notes</p>
+                            </div>
+                            <div class="col-lg-8 text-right checkbox-name">
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" checked />
+                                    <p class="form-check-label">RCI</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" />
+                                    <p class="form-check-label">NG</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" />
+                                    <p class="form-check-label">PS</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" />
+                                    <p class="form-check-label">Visited</p>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="notes-scrollbar scrollbar-style">
+                                <div>
+                                    02/15/2022 14:19:09 SKS-Sharon sSlot Your Message to mdayley@1800contact.com couldn’t be delivered 
+                                    mdayley wasn’t found at 1800contacts.com<br />
+                                    01/17/2019 09:42:08 KXF Ken For lvm<br />
+                                    01/14/2019<br />
+                                    01/10/2019<br />
+                                    01/07/2019<br />
+                                    01/04/2019<br />
+                                    12/19/2018<br />
+                                    05/04/2019<br />
+                                    04/19/2018<br />
+                                    02/19/2018<br />
+
+                                    02/19/2018 10:42:08 ALG-Aaron Greider s/w not happy-havent only gotten 6 or 7 candidates total said the intake forms we send over we a mess and totally disorganized he speaking with ciara this week to get an update-but said he doesn’t think they’ll do anything else with us- hasn’t realized any value
+
+                                    02/19/2018 10:42:08 ALG-Aaron Greider LVM
+                                    mdayley wasn’t found at 1800contacts.com
+                                    01/17/2019 09:42:08 KXF.Ken For lvm
+                                    01/14/2019 11:42:08 KXF.Ken Fox lvm
+                                    01/10/2019 09:42:08 KXF.Ken For lvm
+
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="quotes-container">
+                        <div class="row quotes-head">
+                            <div class="col-lg-6">
+                                <p>Quotes</p>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <input type="text" class="company-search" placeholder="Search" />
+                            </div>
+                        </div>
+                        <div class="quotes-inner-container scrollbar-style">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>AD/Inv.#</th>
+                                        <th>Contact</th>
+                                        <th>Rep.</th>
+                                        <th>Agency</th>
+                                        <th>Total Sale</th>
+                                        <th>Rep</th>
+                                        <th>Agency</th>
+                                        <th>Total Sale</th>
+                                        <th>G.C/S</th>
+                                        <th>Conf.</th>
+                                        <th>Canc.</th>
+                                        <th class="sticky-content">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>02/29/16</td>
+                                        <td>37691</td>
+                                        <td>Matt Dayley</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>Y</td>
+                                        <td>Y</td>
+                                        <td>N</td>
+                                        <td class="view-icon sticky-content" data-toggle="modal"
+                                            data-target="#quotesModal">
+                                            <img class="" src="../Images/View.png" alt="View Icon" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/29/16</td>
+                                        <td>37691</td>
+                                        <td>Matt Dayley</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>Y</td>
+                                        <td>Y</td>
+                                        <td>N</td>
+                                        <td class="view-icon sticky-content" data-toggle="modal"
+                                            data-target="#quotesModal">
+                                            <img class="" src="../Images/View.png" alt="View Icon" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/29/16</td>
+                                        <td>37691</td>
+                                        <td>Matt Dayley</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>ALG</td>
+                                        <td>NA</td>
+                                        <td>$20985.00</td>
+                                        <td>Y</td>
+                                        <td>Y</td>
+                                        <td>N</td>
+                                        <td class="view-icon sticky-content" data-toggle="modal"
+                                            data-target="#quotesModal">
+                                            <img class="" src="../Images/View.png" alt="View Icon" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="quotesModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="row">
+                                    <div class="col-lg-6 quotes-modal-name">
+                                        <label>Company & Quotes</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" class="cancel-btn">&#11198;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-body quotes-modal-data">
+                                    <div class="row modal-data">
+                                        <div class="col-lg-3">
+                                            <table>
+                                                <tr>
+                                                    <th>Company</th>
+                                                    <td>Amazon</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Suite</th>
+                                                    <td>NA</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>City</th>
+                                                    <td>Banglore</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>State</th>
+                                                    <td>WY</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>URL</th>
+                                                    <td>www.amazon.com</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <table>
+                                                <tr>
+                                                    <th>Created By</th>
+                                                    <td>ALG | 02/12/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Uploaded By</th>
+                                                    <td>MJW | 02/12/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Confirmed By</th>
+                                                    <td>MJW | 02/12/2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Canceled By</th>
+                                                    <td>NA</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>URL</th>
+                                                    <td>www.amazon.com</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <table>
+                                                <tr>
+                                                    <th>Quote #</th>
+                                                    <td>2342456</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Invoice #</th>
+                                                    <td>37691</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address</th>
+                                                    <td>2972, Illinois 85486</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Email ID</th>
+                                                    <td>Mattdayley@amazon.com</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <table>
+                                                <tr>
+                                                    <th>Contact</th>
+                                                    <td>Matt Dayley</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Tel</th>
+                                                    <td>801-345-7890</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Fax</th>
+                                                    <td>801-345-7890</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Zip Code</th>
+                                                    <td>4408 3847</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row modal-table scrollbar-style">
+                                        <table>
+                                            <thead>
+                                                <tr class="table-head">
+                                                    <th>Price</th>
+                                                    <th>Pr.Disc.</th>
+                                                    <th>Tot.Aft.Pr.Disc</th>
+                                                    <th>%Disc</th>
+                                                    <th>Addit.$Disc</th>
+                                                    <th>Tot.Sale.Ag.Disc</th>
+                                                    <th>Final.Sale.Amt.</th>
+                                                    <th>Total@List</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>2000</td>
+                                                    <td>-</td>
+                                                    <td>2000.00</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>2000.00</td>
+                                                    <td>2000.00</td>
+                                                    <td>2000.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>18985</td>
+                                                    <td>-</td>
+                                                    <td>18985.00</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>18985.00</td>
+                                                    <td>18985.00</td>
+                                                    <td>18985.00</td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 modal-checkbox">
+                                            <div class="row">
+                                                <div class="col-lg-4 modal-chkbox">
+                                                    <ul>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test"
+                                                                       checked />
+                                                                Give to cust. service
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Ad Copy here
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Pickup
+                                                            </label>@*<input type="text" class="quotes-input" />*@
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Ad copy coming
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Ad copy Received
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Camera Ready
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Hard copy
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Electronics
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 modal-chkbox">
+                                                    <ul>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test"
+                                                                       checked />
+                                                                Confirmed
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Add Proof Requirement
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Ad Proof Send
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Add'l Proof Req.
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                CR Proof Required
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Ad Text
+                                                            </label>
+                                                        </li>
+                                                        <li class="company-checkbox-list">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test"
+                                                                       checked />
+                                                                Billed
+                                                            </label>
+                                                            <input type="date" class="quotes-input" />
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Cancelled
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 modal-chkbox">
+                                                    <ul>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Mechnical Sent
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Web Coming
+                                                            </label>
+                                                        </li>
+                                                        <li class="label-style">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Web Received
+                                                            </label>
+                                                        </li>
+                                                        <li class="company-checkbox-list">
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                IO/PO #
+                                                            </label>
+                                                            <input type="text" class="quotes-input" />
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Swap Ad
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                In-house
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="checkid" style="word-wrap: break-word">
+                                                                <input id="checkid" type="checkbox" value="test" />
+                                                                Closed
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="modal-total">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Total@List+color</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Total price disc.</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Total % disc</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Additional $ disc.</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="col-lg-6 pl-0">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Total Discounts</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Total before agcy. Disc.</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <p>Agency Disc</p>
+                                                                </td>
+                                                                <td><input type="text" placeholder="" /></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="total-result">
+                                                            <p>Total Sale <input type="text" placeholder="" /></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row footer-design">
+                <div class="col-lg-6">
+                    <p class="text-left">© 2022 | All rights reserved</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-right">
+                        <a>Terms</a> |
+                        <a>Privacy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
