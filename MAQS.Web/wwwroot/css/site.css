@@ -581,6 +581,7 @@ html {
     font-size: 14px;
     line-height: 17px;
     color: #555555;
+    visibility: hidden;
 }
 
     .modal-checkbox ul {
