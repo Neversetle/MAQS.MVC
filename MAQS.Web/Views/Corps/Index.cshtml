@@ -1,269 +1,87 @@
 ﻿@model IEnumerable<MAQS.Web.Models.Corp>
-
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<section>
+    <partial name="~/Views/shared/_headerview.cshtml" />
+    <div class="maqs-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <input type="text" class="SearchBar"
+                               placeholder="Search by company name, contact, city, state, zip, code ... etc" />
+                        <button class="modal-button">
+                            <img class="filter" data-toggle="modal" data-target="#searchModal"
+                                 src="../Images/Vector.png" alt="Advanced Filter" id="advancedFilter" />
+                        </button>
+                    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Rowid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Createdby)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Updated)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Updatedby)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Timestamp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Delrec)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Company)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contact)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pharea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phext)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phtype)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altpharea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altphone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altphext)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Altphtype)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pharea800)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone800)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Faxarea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fax)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Urlweb)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Agcorpid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Prvemp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Skillset)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lpcode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contactid2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Parentid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Persemail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Urlcareers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Position)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rowid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Createdby)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Updated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Updatedby)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Timestamp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Delrec)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contact)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pharea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phext)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phtype)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Altpharea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Altphone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Altphext)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Altphtype)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pharea800)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone800)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Faxarea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Urlweb)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Agcorpid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prvemp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Skillset)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lpcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contactid2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Parentid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persemail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Urlcareers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Position)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Corpid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Corpid">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Corpid">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+                    <div class="company-contact">
+                        <div class="row add-margin">
+                            <div class="col-lg-4">
+                                <p class="company-title">Company Contacts</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="company-search" placeholder="Search" />
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <p class="company-records">Total Records: <b>254</b></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="company-table-scrollbar scrollbar-style">
+                                    <table id="tblCorp">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Contact</th>
+                                                <th>Title</th>
+                                                <th>Address</th>
+                                                <th>Suite</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach(var obj in Model){
+                                                <tr>
+                                                    <td>@obj.Company</td>
+                                                    <td>@obj.Contact</td>
+                                                    <td>@obj.Title</td>
+                                                    <td>@obj.Address1</td>
+                                                    <td>NULL</td>
+                                                    <td>@obj.City</td>
+                                                    <td>@obj.State</td>
+                                                    <td>@obj.Zip</td>
+
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
