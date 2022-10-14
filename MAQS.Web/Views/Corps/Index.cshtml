@@ -77,28 +77,26 @@
                             <div class="col-lg-4">
                                 <p class="company-title">Company Contacts</p>
                             </div>
-                            <div class="col-lg-4">
+                            @*<div class="col-lg-4">
                                 <input type="text" class="company-search" placeholder="Search" />
                             </div>
                             <div class="col-lg-4 text-right">
                                 <p class="company-records">Total Records: <b>254</b></p>
-                            </div>
+                            </div>*@
                         </div>
 
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="company-table-scrollbar scrollbar-style">
-                                    <table id="tblCorp">
+                                    <table id="dataTableData">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Contact</th>
                                                 <th>Title</th>
                                                 <th>Address</th>
-                                                <th>Suite</th>
                                                 <th>City</th>
                                                 <th>State</th>
-                                                <th>Zip</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -108,11 +106,8 @@
                                                     <td>@obj.Contact</td>
                                                     <td>@obj.Title</td>
                                                     <td>@obj.Address1</td>
-                                                    <td>NULL</td>
                                                     <td>@obj.City</td>
                                                     <td>@obj.State</td>
-                                                    <td>@obj.Zip</td>
-
                                                 </tr>
                                             }
                                         </tbody>
@@ -714,3 +709,7 @@
     })
 
 </script>
+
+@section scripts{
+    <script src="~/js/datatable_file.js"></script>
+}

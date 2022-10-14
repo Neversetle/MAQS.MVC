@@ -197,10 +197,9 @@ html {
 .company-table-scrollbar th {
     background-color: #2A5A98;
     font-size: 14px;
-    line-height: 17px;
     color: #FFFFFF;
     padding-left: 20px;
-    height: 50px;
+    height: 30px;
 }
 
 .company-contact tr:nth-child(odd) {
@@ -213,10 +212,9 @@ html {
 
 .company-table-scrollbar td {
     font-size: 14px;
-    line-height: 17px;
     color: #333333;
     padding-left: 20px;
-    height: 50px;
+    height: 30px;
     white-space: nowrap;
 }
 
