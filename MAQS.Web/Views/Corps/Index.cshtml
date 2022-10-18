@@ -78,10 +78,10 @@
                                 <p class="company-title">Company Contacts</p>
                             </div>
                             @*<div class="col-lg-4">
-                                <input type="text" class="company-search" placeholder="Search" />
+                            <input type="text" class="company-search" placeholder="Search" />
                             </div>
                             <div class="col-lg-4 text-right">
-                                <p class="company-records">Total Records: <b>254</b></p>
+                            <p class="company-records">Total Records: <b>254</b></p>
                             </div>*@
                         </div>
 
@@ -100,8 +100,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach(var obj in Model){
-                                                <tr>
+                                            @foreach (var obj in Model)
+                                            {
+                                                <tr onclick="loadData(@obj.Corpid)">
                                                     <td>@obj.Company</td>
                                                     <td>@obj.Contact</td>
                                                     <td>@obj.Title</td>
@@ -130,34 +131,34 @@
                         <p>Contact</p>
 
                         @*<div class="contact-inner-container scrollbar-style">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Name</th>
-                                        <td>Swiggy</td>
-                                        <th>Contact</th>
-                                        <td>Kristin Watson</td>
-                                        <th>Title</th>
-                                        <td>Web Designer</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Suit</th>
-                                        <td>NA</td>
-                                        <th>State</th>
-                                        <td>ME</td>
-                                        <th>City</th>
-                                        <td>Berlin</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Phone No.</th>
-                                        <td>1234567890</td>
-                                        <th>Alt. No</th>
-                                        <td>NA</td>
-                                        <th>URL Web</th>
-                                        <td>www.swiggy.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <table>
+                        <tbody>
+                        <tr>
+                        <th>Name</th>
+                        <td>Swiggy</td>
+                        <th>Contact</th>
+                        <td>Kristin Watson</td>
+                        <th>Title</th>
+                        <td>Web Designer</td>
+                        </tr>
+                        <tr>
+                        <th>Suit</th>
+                        <td>NA</td>
+                        <th>State</th>
+                        <td>ME</td>
+                        <th>City</th>
+                        <td>Berlin</td>
+                        </tr>
+                        <tr>
+                        <th>Phone No.</th>
+                        <td>1234567890</td>
+                        <th>Alt. No</th>
+                        <td>NA</td>
+                        <th>URL Web</th>
+                        <td>www.swiggy.com</td>
+                        </tr>
+                        </tbody>
+                        </table>
                         </div>*@
                     </div>
 
@@ -167,50 +168,51 @@
                                 <p>Notes</p>
                             </div>
                             @*<div class="col-lg-8 text-right checkbox-name">
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" id="rci" name="notes" value="RCI" />
-                                    <p class="form-check-label">RCI</p>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" id="ng" name="notes" value="NG" />
-                                    <p class="form-check-label">NG</p>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" id="ps" name="notes" value="PS" />
-                                    <p class="form-check-label">PS</p>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" id="visited" name="notes" value="VISITED" />
-                                    <p class="form-check-label">Visited</p>
-                                </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" id="rci" name="notes" value="RCI" />
+                            <p class="form-check-label">RCI</p>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" id="ng" name="notes" value="NG" />
+                            <p class="form-check-label">NG</p>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" id="ps" name="notes" value="PS" />
+                            <p class="form-check-label">PS</p>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" id="visited" name="notes" value="VISITED" />
+                            <p class="form-check-label">Visited</p>
+                            </div>
                             </div>*@
                         </div>
 
                         @*<div class="notes-scrollbar scrollbar-style">
-                            <div>
-                                02/15/2022 14:19:09 SKS-Sharon sSlot Your Message to mdayley@1800contact.com couldn’t be delivered
-                                mdayley wasn’t found at 1800contacts.com<br />
-                                01/17/2019 09:42:08 KXF Ken For lvm<br />
-                                01/14/2019<br />
-                                01/10/2019<br />
-                                01/07/2019<br />
-                                01/04/2019<br />
-                                12/19/2018<br />
-                                05/04/2019<br />
-                                04/19/2018<br />
-                                02/19/2018<br />
+                        <div>
+                        02/15/2022 14:19:09 SKS-Sharon sSlot Your Message to mdayley@1800contact.com couldn’t be delivered
+                        mdayley wasn’t found at 1800contacts.com<br />
+                        01/17/2019 09:42:08 KXF Ken For lvm<br />
+                        01/14/2019<br />
+                        01/10/2019<br />
+                        01/07/2019<br />
+                        01/04/2019<br />
+                        12/19/2018<br />
+                        05/04/2019<br />
+                        04/19/2018<br />
+                        02/19/2018<br />
 
-                                02/19/2018 10:42:08 ALG-Aaron Greider s/w not happy-havent only gotten 6 or 7 candidates total said the intake forms we send over we a mess and totally disorganized he speaking with ciara this week to get an update-but said he doesn’t think they’ll do anything else with us- hasn’t realized any value
+                        02/19/2018 10:42:08 ALG-Aaron Greider s/w not happy-havent only gotten 6 or 7 candidates total said the intake forms we send over we a mess and totally disorganized he speaking with ciara this week to get an update-but said he doesn’t think they’ll do anything else with us- hasn’t realized any value
 
-                                02/19/2018 10:42:08 ALG-Aaron Greider LVM
-                                mdayley wasn’t found at 1800contacts.com
-                                01/17/2019 09:42:08 KXF.Ken For lvm
-                                01/14/2019 11:42:08 KXF.Ken Fox lvm
-                                01/10/2019 09:42:08 KXF.Ken For lvm
+                        02/19/2018 10:42:08 ALG-Aaron Greider LVM
+                        mdayley wasn’t found at 1800contacts.com
+                        01/17/2019 09:42:08 KXF.Ken For lvm
+                        01/14/2019 11:42:08 KXF.Ken Fox lvm
+                        01/10/2019 09:42:08 KXF.Ken For lvm
 
-                            </div>
                         </div>
-*@                    </div>
+                        </div>
+                        *@
+                    </div>
 
                     <div class="quotes-container">
                         <div class="row quotes-head">
@@ -218,11 +220,11 @@
                                 <p>Quotes</p>
                             </div>
                             @*<div class="col-lg-6 text-right">
-                                <input type="text" class="company-search" placeholder="Search" />
+                            <input type="text" class="company-search" placeholder="Search" />
                             </div>*@
                         </div>
-                        @*<div class="quotes-inner-container scrollbar-style">
-                            <table>
+                        <div class="quotes-inner-container scrollbar-style">
+                            <table id="tblQuotes">
                                 <thead>
                                     <tr>
                                         <th>Date</th>
@@ -297,7 +299,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>*@
+                        </div>
                     </div>
 
                     <div class="modal fade" id="quotesModal" tabindex="-1" role="dialog"
@@ -707,7 +709,32 @@
             handleDiv.style.visibility = 'hidden';
         }
     })
+    function loadData(id) {
+        data = { CorpId: id }
+        var tableQuotes = document.getElementById("tblQuotes")
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: '@Url.Action("GetData", "Corps")',
+            dataType: "json",
+            success: function (result) {
+                for (var i = 0; i < result.count; i++) {
+                    $('#tableQuotes').append(`<tr>
+                  <td class="row-index text-center">
+                            <p>Row ${result[i].Name}</p></td>
+                   <td class="text-center">
+                        <p>Row ${result[i].Title}</p></td>
+                   </tr>`);
+                });
 
+
+    }
+                },
+    error: function () {
+        alert('error123');
+    }
+            });
+        }
 </script>
 
 @section scripts{
