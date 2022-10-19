@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MessagePack;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MAQS.Web.Models
 {
@@ -47,4 +49,36 @@ namespace MAQS.Web.Models
         public string? Urlcareers { get; set; }
         public string? Position { get; set; }
     }
+
+    public class CorpList
+    {
+        [Required]
+        public string? Company { get; set; }
+        public string? Contact { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
+        public string? Zip { get; set; }
+        public string? Email { get; set; }
+
+        public List<CorpData>? corps { get; set; }
+
+    }
+
+    public class CorpData
+    {
+        [System.ComponentModel.DataAnnotations.Key]
+        public Guid Corpid { get; set; }
+        public string? Company { get; set; }
+        public string? Contact { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
+        public string? Zip { get; set; }
+        public string? Email { get; set; }
+        public string? Title { get; set; }
+        public string? Address1 { get; set; }
+
+
+    }
+
+
 }

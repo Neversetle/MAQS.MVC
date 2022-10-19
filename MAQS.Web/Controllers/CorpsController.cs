@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MAQS.Web.Models;
+using Microsoft.Data.SqlClient;
 
 namespace MAQS.Web.Controllers
 {
@@ -19,10 +20,36 @@ namespace MAQS.Web.Controllers
         }
 
         // GET: Corps
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-              return View(await _context.Corps.ToListAsync());
+            CorpList corpList = new CorpList();
+            List<CorpData> corpListList = new List<CorpData>();
+            corpList.corps = corpListList;
+              return View(corpList);
         }
+        [HttpPost]
+        public IActionResult Index(CorpList corp)
+        {
+            CorpList corpList = new CorpList();
+            
+            List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@Company", corp.Company),
+                new SqlParameter("@City", corp.City),
+                new SqlParameter("@State", corp.State),
+                new SqlParameter("@Zip", corp.Zip),
+                new SqlParameter("@Email", corp.Email),
+                new SqlParameter("@Contact", corp.Contact),
+            };
+
+            string StroedProc = " EXEC [MAQS_SearchResult]@Company,@City,@State,@Zip,@Email,@Contact";
+
+            var corpResult = _context.CorpDatas.FromSqlRaw(StroedProc, param.ToArray()).ToList();
+            corpList.corps = corpResult;
+
+            return View(corpList);
+        }
+
 
         // GET: Corps/Details/5
         public async Task<IActionResult> Details(Guid? id)

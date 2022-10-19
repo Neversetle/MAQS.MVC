@@ -17,6 +17,7 @@ namespace MAQS.Web.Models
         }
 
         public virtual DbSet<Agency> Agencies { get; set; } = null!;
+        public DbSet<CorpData> CorpDatas { get; set; }=null;
         public virtual DbSet<Corp> Corps { get; set; } = null!;
         public virtual DbSet<Misnote> Misnotes { get; set; } = null!;
         public virtual DbSet<Ngnote> Ngnotes { get; set; } = null!;

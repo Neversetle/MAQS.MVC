@@ -37,4 +37,5 @@ namespace MAQS.Web.Models
         public string? Status { get; set; }
         public string? Contactid2 { get; set; }
     }
+
 }
