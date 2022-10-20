@@ -1,0 +1,656 @@
+html {
+    /*font-family: 'Inter' !important;*/
+    font-style: normal;
+}
+
+.header-height {
+    height: 70px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.company-name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .company-name p {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 25px;
+    }
+
+.user-name {
+    color: #333333;
+}
+
+    .user-name p {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+.letter-R {
+    color: #76B648;
+}
+
+.letter-C {
+    color: #2A5A98;
+}
+
+.letter-I {
+    color: #09908F;
+}
+
+.vertical-line {
+    color: #999999;
+}
+
+.project-name {
+    color: #777777;
+}
+
+.profilePhoto {
+    padding-left: 13px;
+}
+
+.SearchBar {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: url("../Images/Search.png") no-repeat;
+    background-position: 11px 11px;
+}
+
+    .SearchBar:focus {
+        border: 1px solid #2A5A98;
+        box-shadow: 0px 0px 3px #345A93;
+    }
+
+.search {
+    padding: 10px;
+}
+
+.filter {
+    position: relative;
+    left: 605px;
+    bottom: 35px;
+}
+
+.search-box {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.img-dimension {
+    position: relative;
+    width: 645px;
+    height: 270px;
+    bottom: 12px;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 6px;
+    padding: 16px;
+}
+
+    .overlay-text p {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #333333;
+        margin-bottom: 8px;
+    }
+
+    .overlay-text input {
+        width: 100%;
+        height: 50%;
+        border: 1px solid #DDDDDD;
+        border-radius: 8px;
+        margin-bottom: 21px;
+    }
+
+.maqs-primary-btn {
+    width: 90px;
+    height: 37px;
+    border: 1px solid #2A5A98;
+    border-radius: 8px;
+    background-color: #629DEA;
+    color: #FFFFFF;
+}
+
+    .maqs-primary-btn:hover {
+        background-color: #2A5A98;
+        color: #FFFFFF !important;
+    }
+
+.maqs-secondary-btn {
+    width: 90px;
+    height: 37px;
+    background: #FFFFFF;
+    color: #2A5A98;
+    border: 1px solid #2A5A98 !important;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+    .maqs-secondary-btn:hover {
+        background-color: #2A5A98;
+        color: #ffffff !important;
+    }
+
+.maqs-input-field:focus {
+    border: 1px solid #2A5A98;
+    box-shadow: rgb(52,90,147) 0px 0px 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(42,90,152);
+    border-image: initial;
+}
+
+.maqs-content {
+    margin-top: 20px;
+}
+
+.company-contact {
+    position: relative;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    height: 794px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #F0F6FF;
+}
+
+.company-title {
+    font-size: 20px;
+    line-height: 24.4px;
+    padding-top: 8px;
+    margin-bottom: 0px;
+}
+
+.company-search {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    width: 200px;
+    height: 37px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.company-records {
+    font-size: 14px;
+    line-height: 17px;
+    color: #777777;
+    padding: 10px;
+}
+
+.add-margin {
+    margin-bottom: 21px;
+}
+
+.company-table-scrollbar th {
+    background-color: #2A5A98;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding-left: 20px;
+    height: 30px;
+}
+
+.company-contact tr:nth-child(odd) {
+    background-color: #DDDDDD;
+}
+
+.company-contact tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.company-table-scrollbar td {
+    font-size: 14px;
+    color: #333333;
+    padding-left: 20px;
+    height: 30px;
+    white-space: nowrap;
+}
+
+.company-table-scrollbar {
+    overflow-x: scroll;
+}
+
+.contact-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    width: 100%;
+    height: 190px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #F3FFFF;
+}
+
+    .contact-container p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+    }
+
+.contact-inner-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    height: 121px;
+    padding: 15px;
+    background: #FFFFFF;
+    overflow-y: scroll;
+}
+
+    .contact-inner-container th, td {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 10px;
+    }
+
+    .contact-inner-container th {
+        color: #333333;
+    }
+
+    .contact-inner-container td {
+        color: #555555;
+    }
+
+.notes-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #FFFFFF;
+}
+
+.notes-title p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.checkbox-name {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+    .checkbox-name input {
+        background: #2A5A98;
+    }
+
+.form-check-label {
+    padding-left: 8px;
+    padding-right: 20px;
+}
+
+.notes-container input {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+}
+
+.notes-inner-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    height: 231px;
+    border: 1px #EEEEEE;
+}
+
+.quotes-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    width: 100%;
+    height: 334px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #F3FFFF;
+}
+
+.quotes-head {
+    margin-bottom: 11px;
+}
+
+.quotes-container p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.quotes-inner-container {
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+    /*.quotes-inner-container table {
+    overflow-y: hidden;
+}*/
+
+    .quotes-inner-container th {
+        background: #09908F;
+        color: #FFFFFF;
+        height: 50px;
+        padding-left: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 20px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .quotes-inner-container td {
+        color: #555555;
+        width: max-content;
+        padding-left: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 20px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .quotes-inner-container tr {
+        height: 50px;
+    }
+
+        .quotes-inner-container tr:nth-child(odd) {
+            background-color: #FFFFFF;
+        }
+
+        .quotes-inner-container tr:nth-child(even) {
+            background-color: #F5F5F5;
+        }
+
+    .quotes-inner-container table {
+        border: 1px solid #ddd;
+        min-width: max-content;
+    }
+
+    .quotes-inner-container th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+.view-icon {
+    padding-left: 20px;
+}
+
+/* width */
+.scrollbar-style::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+.scrollbar-style::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #FFFFFF;
+    border-radius: 10px;
+}
+
+/* Handle */
+.scrollbar-style::-webkit-scrollbar-thumb {
+    background: #BBBBBB;
+    border-radius: 5px;
+}
+
+    /* Handle on hover */
+    .scrollbar-style::-webkit-scrollbar-thumb:hover {
+        background: #777777;
+    }
+
+.footer-design {
+    background: #333333;
+    height: 50px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+    .footer-design p {
+        margin-bottom: 0px;
+        padding: 10px;
+    }
+
+.quotes-modal-data {
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+}
+
+.quotes-modal-name label {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.modal-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.modal-button-name {
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal-button-data {
+    padding: 15px;
+    height: 595px;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+}
+
+.modal-data th {
+    height: 17px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+    padding-right: 9px;
+    padding-bottom: 15px;
+}
+
+.modal-data td {
+    font-size: 14px;
+    line-height: 17px;
+    color: #555555;
+    padding-bottom: 15px;
+}
+
+.modal-table {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+    .modal-table tr {
+        height: 50px;
+        border: 1px solid #F5F5F5;
+    }
+
+    .modal-table th {
+        padding-left: 20px;
+        padding-top: 16px;
+        padding-right: 36px;
+        padding-bottom: 16px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+
+    .modal-table td {
+        padding-left: 20px;
+        padding-top: 16px;
+        padding-right: 23px;
+        padding-bottom: 16px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #555555;
+    }
+
+    .modal-table tr:nth-child(even) {
+        background-color: #FAFAFA;
+    }
+
+    .modal-table .table-head {
+        background: #76B648;
+    }
+
+.modal-total {
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    height: 236px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+    .modal-total td{
+        padding: 0px;
+    }
+
+    .modal-total p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: right;
+        color: #555555;
+    }
+
+    .modal-total input {
+        width: 100px;
+        height: 27px;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 8px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+    }
+
+    .modal-total hr {
+        width: 511px;
+        height: 0px;
+        border: 1px solid #DDDDDD;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+.total-result {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+    .total-result input {
+        background: #FDE3E3;
+    }
+
+.modal-checkbox {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #555555;
+    visibility: hidden;
+}
+
+    .modal-checkbox ul {
+        list-style: none;
+    }
+
+    .modal-checkbox label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #555555;
+    }
+
+    .modal-checkbox .quotes-input {
+        width: 110px;
+        height: 27px;
+        background: #FFFFFF;
+        border: 1px solid #DDDDDD;
+        border-radius: 8px;
+    }
+
+.modal-chkbox ul {
+    padding-left: 0;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-dialog {
+    min-width: 1200px;
+    height: 649px;
+}
+
+.label-style {
+    margin-left: 20px;
+}
+
+.company-checkbox-list {
+    display: flex;
+}
+
+    .company-checkbox-list label {
+        display: flex;
+        align-items: baseline;
+        margin-right: 2px;
+    }
+
+        .company-checkbox-list label input {
+            margin-right: 2px;
+        }
+
+.notes-scrollbar {
+    width: 100%;
+    height: 231px;
+    padding: 15px;
+    overflow-y: scroll;
+    border: 1px solid #EEEEEE !important;
+    border-radius: 8px;
+}
+
+.sticky-content {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+}
+
+.quotes-inner-container table tbody tr:nth-child(even) .sticky-content {
+    background-color: #F5F5F5;
+}
+
+.quotes-inner-container table tbody tr:nth-child(odd) .sticky-content {
+    background-color: white;
+}
