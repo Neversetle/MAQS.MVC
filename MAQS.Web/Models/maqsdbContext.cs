@@ -28,7 +28,7 @@ namespace MAQS.Web.Models
         public virtual DbSet<Rcinote> Rcinotes { get; set; } = null!;
         public virtual DbSet<Tag> Tags { get; set; } = null!;
         public virtual DbSet<TblNb> TblNbs { get; set; } = null!;
-        public virtual DbSet<Visnote> Visnotes { get; set; } = null!; 
+        public virtual DbSet<Visnote> Visnotes { get; set; } = null!;
         public virtual DbSet<ContactDetails> ContactDetailss { get; set; } = null!;
 
 
@@ -36,7 +36,7 @@ namespace MAQS.Web.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=maqsdbserver.database.windows.net;Database=maqsdb;Persist Security Info=True;User ID=maqsadmin;Password=maqsdb@123!;");
             }
         }
