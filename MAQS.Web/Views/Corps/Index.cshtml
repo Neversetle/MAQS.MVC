@@ -1,34 +1,64 @@
 ﻿@model IEnumerable<MAQS.Web.Models.Corp>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //ViewData["Title"] = "Index";
+//    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<script>
+<script>
         function loadData(id) {
         // function body
         $.ajax({
                             type: "get",
-                            data:data,
-                            url: '@Url.Action("Corp", "Corps")',
+                            data:{id:id},
+                            url: '@Url.Action("ContactDetails", "Corps")',
                             dataType: "json",
                             success: function (result) {
                                 console.log(result);
                                 debugger;
                                 if(result == 0)
                                 {
-                                    alert("Please enter a valid zip code!")
-                                    $('#txtPINCode').val('')
-                                    $('#txtPINCode').focus()
+                                    alert("No Data")
+                                  $('#Company').text('');
+                                  $('#Contact').text('');
+                                  $('#Title').text('');
+                                  $('#Suite').text('');
+                                  $('#State').text('');
+                                  $('#City').text('');
+                                  $('#phoneno').text('');
+                                  $('#altno').text('');
+                                  $('#Urlweb').text('');
+                                  $('#Zip').text('');
+                                  $('#Email').text('');
+                                  $('#Address').text('');
+                                  $('#Url').text('');
+
+                                  $('#RciNotes').html('');
+                               }
+                               else{                            
+                                   $('#Company').text(result[0].company);
+                                   $('#Contact').text(result[0].contact);
+                                   $('#Title').text(result[0].title);
+                                   $('#Suite').text(result[0].address2);
+                                   $('#State').text(result[0].state);
+                                   $('#City').text(result[0].city);
+                                   $('#phoneno').text(result[0].phone);
+                                   $('#altno').text(result[0].altphone);
+                                   $('#Urlweb').text(result[0].urlweb);
+                                   $('#Zip').text(result[0].zip);
+                                   $('#Email').text(result[0].email);
+                                   $('#Address').text(result[0].address1);
+                                   $('#Url').text(result[0].urlcareers);
+
+                                   $('#RciNotes').html(result[0].rcinotes_pad);
                                }
                             },
                             error: function () {
                                 alert('error123');
                             }
-
+                        });
     }
-</script>*@
+</script>
 
 <section>
     <partial name="~/Views/shared/_headerview.cshtml" />
@@ -37,16 +67,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div>
-                        //<form method="post" asp-action="Index" asp-controller="Corps">
+                        @*//<form method="post" asp-action="Index" asp-controller="Corps">
                         //<input asp-for="@Model" class="SearchBar" placeholder="Search by company name, contact, city, state, zip, code ... etc" />
-                        //</form>
+                        //</form>*@
                         <button class="modal-button" >
                             <img class="filter" src="../Images/Vector.png" id="advancedFilter" />
                         </button>
                         
                     </div>
 
-                    <div class="search-box" id="searchPanel" @*style="display:none;"*@>
+                   @* <div class="search-box" id="searchPanel" @*style="display:none;">
                         <img class="img-dimension" src="../Images/SearchPanel.png">
 
                         <div class="overlay-text">
@@ -85,7 +115,7 @@
                                 <div class="col-sm-3">
                                     <label>MM</label>
                                     <input asp-for="MM" class="maqs-input-field" />
-                                    </div>*@
+                                    </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 text-right">
@@ -97,7 +127,7 @@
                             </div>
                             </form>
                         </div>
-                    </div>
+                    </div>*@
 
                     <div class="company-contact">
                         <div class="row add-margin">
@@ -128,7 +158,7 @@
                                         <tbody>
                                             @foreach (var obj in Model)
                                             {
-                                                <tr id=corpid onclick="loadData(@obj.Corpid)">
+                                                <tr id=corpid onclick="loadData('@obj.Corpid')">
                                                     <td>@obj.Company</td>
                                                     <td>@obj.Contact</td>
                                                     <td>@obj.Title</td>
@@ -155,36 +185,47 @@
                 <div class="col-lg-6">
                     <div class="contact-container">
                         <p>Contact</p>
-
                         <div class="contact-inner-container scrollbar-style">
-                        <table>
-                        <tbody>
-                        <tr>
-                        <th>Name</th>
-                        <td>Swiggy</td>
-                        <th>Contact</th>
-                        <td>Kristin Watson</td>
-                        <th>Title</th>
-                        <td>Web Designer</td>
-                        </tr>
-                        <tr>
-                        <th>Suit</th>
-                        <td>NA</td>
-                        <th>State</th>
-                        <td>ME</td>
-                        <th>City</th>
-                        <td>Berlin</td>
-                        </tr>
-                        <tr>
-                        <th>Phone No.</th>
-                        <td>1234567890</td>
-                        <th>Alt. No</th>
-                        <td>NA</td>
-                        <th>URL Web</th>
-                        <td>www.swiggy.com</td>
-                        </tr>
-                        </tbody>
-                        </table>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td id="Company"></td>
+                                        <th>Contact</th>
+                                        <td id="Contact"></td>
+                                        <th>Title</th>
+                                        <td id="Title"></td>
+                                    </tr>
+                                    <tr>                            
+                                        <th>Suit</th>
+                                        <td id="Suite"></td>
+                                        <th>State</th>
+                                        <td id="State"></td>
+                                        <th>City</th>
+                                        <td id="City"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone No.</th>
+                                        <td id="phoneno"></td>
+                                        <th>Alt. No</th>
+                                        <td id="altno"></td>
+                                        <th>URL Web</th>
+                                        <td id="Urlweb"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Zip Code</th>
+                                        <td id="Zip"></td>
+                                        <th>Email Id</th>
+                                        <td id="Email"></td>
+                                        <th>Address</th>
+                                        <td id="Address"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>URL</th>
+                                        <td id="Url"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -213,32 +254,10 @@
                             </div>
                         </div>
 
-                        @*<div class="notes-scrollbar scrollbar-style">
-                        <div>
-                        02/15/2022 14:19:09 SKS-Sharon sSlot Your Message to mdayley@1800contact.com couldn’t be delivered
-                        mdayley wasn’t found at 1800contacts.com<br />
-                        01/17/2019 09:42:08 KXF Ken For lvm<br />
-                        01/14/2019<br />
-                        01/10/2019<br />
-                        01/07/2019<br />
-                        01/04/2019<br />
-                        12/19/2018<br />
-                        05/04/2019<br />
-                        04/19/2018<br />
-                        02/19/2018<br />
-
-                        02/19/2018 10:42:08 ALG-Aaron Greider s/w not happy-havent only gotten 6 or 7 candidates total said the intake forms we send over we a mess and totally disorganized he speaking with ciara this week to get an update-but said he doesn’t think they’ll do anything else with us- hasn’t realized any value
-
-                        02/19/2018 10:42:08 ALG-Aaron Greider LVM
-                        mdayley wasn’t found at 1800contacts.com
-                        01/17/2019 09:42:08 KXF.Ken For lvm
-                        01/14/2019 11:42:08 KXF.Ken Fox lvm
-                        01/10/2019 09:42:08 KXF.Ken For lvm
-
+                        <div class="notes-scrollbar scrollbar-style">
+                            <div id="RciNotes">
+                            </div>
                         </div>
-                        </div>
-                        *@
-                    </div>
 
                     <div class="quotes-container">
                         <div class="row quotes-head">

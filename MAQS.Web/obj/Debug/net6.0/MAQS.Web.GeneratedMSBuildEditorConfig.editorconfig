@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Mouri\RCI\update_RCI\MAQS.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/CompanyContact/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFueUNvbnRhY3RcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,14 +33,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/Error.cshtml]

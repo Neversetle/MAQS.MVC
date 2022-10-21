@@ -22,10 +22,10 @@ namespace MAQS.Web.Models
         public string? Address1 { get; set; }
         public string? Urlcareers { get; set; }
 
-        public string? RcinotesPad { get; set; }
-        public string? NgnotesPad { get; set; }
-        public string? MisnotesPad { get; set; }
-        public string? VisnotesPad { get; set; }
+        public string? Rcinotes_Pad { get; set; }
+        public string? Ngnotes_Pad { get; set; }
+        public string? Misnotes_Pad { get; set; }
+        public string? Visnotes_Pad { get; set; }
 
         public short Qinvnum { get; set; }
         public string? Qcontact { get; set; }
