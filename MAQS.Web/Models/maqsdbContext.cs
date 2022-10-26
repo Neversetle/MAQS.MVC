@@ -17,7 +17,7 @@ namespace MAQS.Web.Models
         }
 
         public virtual DbSet<Agency> Agencies { get; set; } = null!;
-        public DbSet<CorpData> CorpDatas { get; set; }=null;
+        public DbSet<CorpData> CorpDatas { get; set; }=null!;
         public virtual DbSet<Corp> Corps { get; set; } = null!;
         public virtual DbSet<Misnote> Misnotes { get; set; } = null!;
         public virtual DbSet<Ngnote> Ngnotes { get; set; } = null!;
@@ -30,12 +30,13 @@ namespace MAQS.Web.Models
         public virtual DbSet<Tag> Tags { get; set; } = null!;
         public virtual DbSet<TblNb> TblNbs { get; set; } = null!;
         public virtual DbSet<Visnote> Visnotes { get; set; } = null!;
+        public virtual DbSet<ContactDetails> ContactDetailss { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=maqsdbserver.database.windows.net;Database=maqsdb;Persist Security Info=True;User ID=maqsadmin;Password=maqsdb@123!;");
             }
         }
@@ -401,7 +402,7 @@ namespace MAQS.Web.Models
                     .ValueGeneratedNever()
                     .HasColumnName("corpid");
 
-                entity.Property(e => e.NotesPad)
+                entity.Property(e => e.MisnotesPad)
                     .HasColumnType("text")
                     .HasColumnName("notes_pad");
             });
@@ -416,7 +417,7 @@ namespace MAQS.Web.Models
                     .ValueGeneratedNever()
                     .HasColumnName("corpid");
 
-                entity.Property(e => e.NotesPad)
+                entity.Property(e => e.NgnotesPad)
                     .HasColumnType("text")
                     .HasColumnName("notes_pad");
             });
@@ -1160,7 +1161,7 @@ namespace MAQS.Web.Models
                     .ValueGeneratedNever()
                     .HasColumnName("corpid");
 
-                entity.Property(e => e.NotesPad)
+                entity.Property(e => e.RcinotesPad)
                     .HasColumnType("text")
                     .HasColumnName("notes_pad");
             });
@@ -1223,7 +1224,7 @@ namespace MAQS.Web.Models
 
                 entity.Property(e => e.Corpid).HasColumnName("corpid");
 
-                entity.Property(e => e.NotesPad)
+                entity.Property(e => e.VisnotesPad)
                     .HasColumnType("text")
                     .HasColumnName("notes_pad");
             });

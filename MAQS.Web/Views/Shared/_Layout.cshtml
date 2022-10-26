@@ -30,6 +30,16 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/home.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
+    <script>
+        function clear(){
+            debugger;
+            $("#companyId").val('');
+            $("#stateId").val('');
+            $("#cityId").val('');
+            $("#contactId").val('');
+            $("#zipId").val('');
+            $("#emailId").val('');
+        }
+    </script>
 </body>
 </html>

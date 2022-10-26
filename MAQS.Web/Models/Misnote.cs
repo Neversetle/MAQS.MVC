@@ -6,6 +6,6 @@ namespace MAQS.Web.Models
     public partial class Misnote
     {
         public Guid Corpid { get; set; }
-        public string? NotesPad { get; set; }
+        public string? MisnotesPad { get; set; }
     }
 }

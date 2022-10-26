@@ -1,9 +1,100 @@
 ﻿@model MAQS.Web.Models.CorpList
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+   // ViewData["Title"] = "Index";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<script>
+    function loadData(id) {
+        // function body
+        $.ajax({
+            type: "get",
+            data: { id: id },
+            url: '@Url.Action("ContactDetails", "Corps")',
+            dataType: "json",
+            success: function (result) {
+                console.log(result);
+                debugger;
+                if (result == 0) {
+                    alert("No Data")
+                    $('#Company').text('');
+                    $('#Contact').text('');
+                    $('#Title').text('');
+                    $('#Suite').text('');
+                    $('#State').text('');
+                    $('#City').text('');
+                    $('#phoneno').text('');
+                    $('#altno').text('');
+                    $('#Urlweb').text('');
+                    $('#Zip').text('');
+                    $('#Email').text('');
+                    $('#Address').text('');
+                    $('#Url').text('');
+
+                    $('#RciNotes').html('');
+                    $('#Ngnotes').html('');
+                    $('#Misnotes').html('');
+                    $('#Visotes').html('');
+                    $('#tblQuotes').html('');
+                }
+                else {
+                    $('#Company').text(result[0].company);
+                    $('#Contact').text(result[0].contact);
+                    $('#Title').text(result[0].title);
+                    $('#Suite').text(result[0].address2);
+                    $('#State').text(result[0].state);
+                    $('#City').text(result[0].city);
+                    $('#phoneno').text(result[0].phone);
+                    $('#altno').text(result[0].altphone);
+                    $('#Urlweb').text(result[0].urlweb);
+                    $('#Zip').text(result[0].zip);
+                    $('#Email').text(result[0].email);
+                    $('#Address').text(result[0].address1);
+                    $('#Url').text(result[0].urlcareers);
+
+                    $('#Rcinotes').html(result[0].rcinotes_Pad);
+                    $('#Ngnotes').html(result[0].ngnotes_Pad);
+                    $('#Misnotes').html(result[0].misnotes_Pad);
+                    $('#Visotes').html(result[0].visnotes_Pad);
+                    GetQuotes(result);
+                }
+            },
+            error: function () {
+                alert('error123');
+            }
+        });
+
+    }
+    function GetQuotes(data) {
+        $("#tblQuotes").html('');
+        var tr = "";
+        $.each(data, function (i, item) {
+            tr = "<tr><td>" + item.qinvnum + "</td><td>" + item.qcontact + "</td><td>" + item.agcyid + "</td><td>" + item.qtotal + "</td><td>" + item.confirmed + "</td><td>" + item.cancelled + "</td>";
+
+            tr += "<td class='view-icon sticky-content' data-toggle='modal' data-target='#quotesModal'>" + "<img class='' src='../Images/View.png' alt='View Icon' /></td></tr>";
+            console.log(tr);
+            $("#tblQuotes").append(tr);
+        });
+    }
+    $(document).ready(function () {
+        console.log('test1');
+        $('#Rcinotes').show();
+        $('#Ngnotes').hide();
+        $('#Misnotes').hide();
+        $('#Visotes').hide();
+
+        $(".radiobtn").change(function () {
+            console.log('test2');
+            var rId = $(this).attr("alt");
+            $('#Rcinotes').hide();
+            $('#Ngnotes').hide();
+            $('#Misnotes').hide();
+            $('#Visotes').hide();
+            $('#' + rId).show();
+        });
+    });
+</script>
 
 <section>
     <partial name="~/Views/shared/_headerview.cshtml" />
@@ -11,65 +102,67 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
+
                     <div>
                         <form method="post" asp-action="Index" asp-controller="Corps">
-                        <input asp-for="@Model.Company" class="SearchBar" placeholder="Search by company name, contact, city, state, zip, code ... etc" />
+                            <input asp-for="@Model.Company" id="companyId" class="SearchBar" placeholder="Search by company name, contact, city, state, zip, code ... etc" />
                         </form>
-                        <button class="modal-button" >
+                        <button class="modal-button">
                             <img class="filter" src="../Images/Vector.png" id="advancedFilter" />
                         </button>
-                        
+
                     </div>
 
-                    <div class="search-box" id="searchPanel" @*style="display:none;"*@>
+                    <div class="search-box" id="searchPanel">
                         <img class="img-dimension" src="../Images/SearchPanel.png">
 
                         <div class="overlay-text">
-                            <form method="post" asp-action="Index" asp-controller="Corps">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>Company</label>
-                                        <input asp-for="@Model.Company" class="maqs-input-field" />
+                            <form id="searchForm" method="post" asp-action="Index" asp-controller="Corps">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>Company</label>
+                                        <input asp-for="@Model.Company" id="companyId" class="maqs-input-field" required />
+                                        <span asp-validation-for="Company" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>State</label>
+                                        <input asp-for="@Model.State" id="stateId" class="maqs-input-field" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>City</label>
+                                        <input asp-for="@Model.City" id="cityId" class="maqs-input-field" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Contact</label>
+                                        <input asp-for="@Model.Contact" id="contactId" class="maqs-input-field" />
+                                    </div>
                                 </div>
-                                <div class="col-sm-3">
-                                    <label>State</label>
-                                    <input asp-for="@Model.State" class="maqs-input-field" />
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>City</label>
-                                    <input asp-for="@Model.City" class="maqs-input-field" />
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Contact</label>
-                                    <input asp-for="@Model.Contact" class="maqs-input-field" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>Zip code</label>
-                                    <input asp-for="@Model.Zip" class="maqs-input-field" />
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Email ID</label>
-                                    <input asp-for="@Model.Email" class="maqs-input-field" />
-                                </div>
-                                @*<div class="col-sm-3">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>Zip code</label>
+                                        <input asp-for="@Model.Zip" id="zipId" class="maqs-input-field" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>Email ID</label>
+                                        <input asp-for="@Model.Email" id="emailId" class="maqs-input-field" />
+                                    </div>
+                                    @*<div class="col-sm-3">
                                     <label>Date</label>
                                     <input asp-for="Date" class="maqs-input-field" />
-                                </div>
-                                <div class="col-sm-3">
+                                    </div>
+                                    <div class="col-sm-3">
                                     <label>MM</label>
                                     <input asp-for="MM" class="maqs-input-field" />
                                     </div>*@
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 text-right">
-                                    <button type="reset" class="btn maqs-secondary-btn">Clear</button>
-                                    <button type="submit" class="btn maqs-primary-btn" onclick="SearchContent">
-                                        Apply
-                                    </button>
                                 </div>
-                            </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-right">
+                                        <button class="btn maqs-secondary-btn" id="btnClear"  >Clear</button>
+                                        @*<input type="button" class="btn maqs-secondary-btn" id="btnClear"  value="Clear"/>*@
+                                        @*<input type="submit" class="btn maqs-primary-btn" id="applyBtn" value="Apply" />*@
+                                        <button type="submit" class="btn maqs-primary-btn" id="applyBtn">Apply</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -88,136 +181,128 @@
                         </div>
                         @if (@Model.corps.Count() == 0)
                         {
-                            <h1>Records not found</h1>
+                            @*<h1>Records not found</h1>*@
+                            <div class="align-middle">
+                                <img src="~/Images/Web search-pana 1.png" class="img-responsive" />
+                            </div>
                         }
-                        else{
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="company-table-scrollbar scrollbar-style">
-                                    <table id="dataTableData">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Contact</th>
-                                                <th>Title</th>
-                                                <th>Address</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var obj in @Model.corps)
-                                            {
-                                                <tr onclick="loadData(@obj.Corpid)">
-                                                    <td>@obj.Company</td>
-                                                    <td>@obj.Contact</td>
-                                                    <td>@obj.Title</td>
-                                                    <td>@obj.Address1</td>
-                                                    <td>@obj.City</td>
-                                                    <td>@obj.State</td>
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="company-table-scrollbar scrollbar-style">
+                                        <table id="dataTableData">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Contact</th>
+                                                    <th>Title</th>
+                                                    <th>Address</th>
+                                                    <th>City</th>
+                                                    <th>State</th>
                                                 </tr>
-                                            }
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var obj in @Model.corps)
+                                                {
+                                                    <tr id=corpid onclick="loadData('@obj.Corpid')">
+                                                        <td>@obj.Company</td>
+                                                        <td>@obj.Contact</td>
+                                                        <td>@obj.Title</td>
+                                                        <td>@obj.Address1</td>
+                                                        <td>@obj.City</td>
+                                                        <td>@obj.State</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         }
-                        <div class="row">
-                            <div class="col-lg-6">
-                            </div>
-                            <div class="col-lg-6">
-                            </div>
-                        </div>
                     </div>
-
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-container">
                         <p>Contact</p>
-
-                        @*<div class="contact-inner-container scrollbar-style">
+                        <div class="contact-inner-container scrollbar-style" id="contactId">
                         <table>
-                        <tbody>
-                        <tr>
-                        <th>Name</th>
-                        <td>Swiggy</td>
-                        <th>Contact</th>
-                        <td>Kristin Watson</td>
-                        <th>Title</th>
-                        <td>Web Designer</td>
-                        </tr>
-                        <tr>
-                        <th>Suit</th>
-                        <td>NA</td>
-                        <th>State</th>
-                        <td>ME</td>
-                        <th>City</th>
-                        <td>Berlin</td>
-                        </tr>
-                        <tr>
-                        <th>Phone No.</th>
-                        <td>1234567890</td>
-                        <th>Alt. No</th>
-                        <td>NA</td>
-                        <th>URL Web</th>
-                        <td>www.swiggy.com</td>
-                        </tr>
-                        </tbody>
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <td id="Company"></td>
+                                    <th>Contact</th>
+                                    <td id="Contact"></td>
+                                    <th>Title</th>
+                                     <td id="Title"></td>
+                                </tr>
+                                <tr>
+                                    <th>Suit</th>
+                                    <td id="Suite"></td>
+                                    <th>State</th>
+                                    <td id="State"></td>
+                                    <th>City</th>
+                                    <td id="City"></td>
+                                </tr>
+                                <tr>
+                                    <th>Phone No.</th>
+                                        <td id="phoneno"></td>
+                                    <th>Alt. No</th>
+                                        <td id="altno"></td>
+                                    <th>URL Web</th>
+                                        <td id="Urlweb"></td>
+                                </tr>
+                                    <tr>
+                                        <th>Zip Code</th>
+                                        <td id="Zip"></td>
+                                        <th>Email Id</th>
+                                        <td id="Email"></td>
+                                        <th>Address</th>
+                                        <td id="Address"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>URL</th>
+                                        <td id="Url"></td>
+                                    </tr>
+                            </tbody>
                         </table>
-                        </div>*@
+                        </div>
                     </div>
-
                     <div class="notes-container">
                         <div class="row">
                             <div class="col-lg-4 notes-title">
                                 <p>Notes</p>
                             </div>
-                            @*<div class="col-lg-8 text-right checkbox-name">
-                            <div class="form-check form-check-inline">
-                            <input type="radio" id="rci" name="notes" value="RCI" />
-                            <p class="form-check-label">RCI</p>
+                            <div class="col-lg-8 text-right checkbox-name">
+                                <div class="form-check form-check-inline">
+                                    <input class="radiobtn" type="radio" id="rci" name="rbtn" alt="Rcinotes" value="RCI" checked="checked" />
+                                    <p class="form-check-label">RCI</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="radiobtn" type="radio" id="ng" name="rbtn" alt="Ngnotes" value="NG" />
+                                    <p class="form-check-label">NG</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="radiobtn" type="radio" id="ps" name="rbtn" alt="Misnotes" value="PS" />
+                                    <p class="form-check-label">PS</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="radiobtn" type="radio" id="visited" name="rbtn" alt="Visotes" value="VISITED" />
+                                    <p class="form-check-label">Visited</p>
+                                </div>
                             </div>
-                            <div class="form-check form-check-inline">
-                            <input type="radio" id="ng" name="notes" value="NG" />
-                            <p class="form-check-label">NG</p>
-                            </div>
-                            <div class="form-check form-check-inline">
-                            <input type="radio" id="ps" name="notes" value="PS" />
-                            <p class="form-check-label">PS</p>
-                            </div>
-                            <div class="form-check form-check-inline">
-                            <input type="radio" id="visited" name="notes" value="VISITED" />
-                            <p class="form-check-label">Visited</p>
-                            </div>
-                            </div>*@
                         </div>
-
-                        @*<div class="notes-scrollbar scrollbar-style">
-                        <div>
-                        02/15/2022 14:19:09 SKS-Sharon sSlot Your Message to mdayley@1800contact.com couldn’t be delivered
-                        mdayley wasn’t found at 1800contacts.com<br />
-                        01/17/2019 09:42:08 KXF Ken For lvm<br />
-                        01/14/2019<br />
-                        01/10/2019<br />
-                        01/07/2019<br />
-                        01/04/2019<br />
-                        12/19/2018<br />
-                        05/04/2019<br />
-                        04/19/2018<br />
-                        02/19/2018<br />
-
-                        02/19/2018 10:42:08 ALG-Aaron Greider s/w not happy-havent only gotten 6 or 7 candidates total said the intake forms we send over we a mess and totally disorganized he speaking with ciara this week to get an update-but said he doesn’t think they’ll do anything else with us- hasn’t realized any value
-
-                        02/19/2018 10:42:08 ALG-Aaron Greider LVM
-                        mdayley wasn’t found at 1800contacts.com
-                        01/17/2019 09:42:08 KXF.Ken For lvm
-                        01/14/2019 11:42:08 KXF.Ken Fox lvm
-                        01/10/2019 09:42:08 KXF.Ken For lvm
-
+                        
+                        <div class="notes-scrollbar scrollbar-style">
+                            <div id="Rcinotes">
+                            </div>
+                            <div id="Ngnotes">
+                            </div>
+                            <div id="Misnotes">
+                            </div>
+                            <div id="Visotes">
+                            </div>
                         </div>
-                        </div>
-                        *@
                     </div>
 
                     <div class="quotes-container">
@@ -225,12 +310,12 @@
                             <div class="col-lg-6">
                                 <p>Quotes</p>
                             </div>
-                            @*<div class="col-lg-6 text-right">
-                            <input type="text" class="company-search" placeholder="Search" />
-                            </div>*@
+                            <div class="col-lg-6 text-right">
+                                <input type="text" class="company-search maqs-input-field" placeholder="Search" />
+                            </div>
                         </div>
                         <div class="quotes-inner-container scrollbar-style">
-                            <table id="tblQuotes">
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>Date</th>
@@ -248,8 +333,8 @@
                                         <th class="sticky-content">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody id="tblQuotes">
+                                    @*<tr>
                                         <td>02/29/16</td>
                                         <td>37691</td>
                                         <td>Matt Dayley</td>
@@ -266,43 +351,7 @@
                                             data-target="#quotesModal">
                                             <img class="" src="../Images/View.png" alt="View Icon" />
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>02/29/16</td>
-                                        <td>37691</td>
-                                        <td>Matt Dayley</td>
-                                        <td>ALG</td>
-                                        <td>NA</td>
-                                        <td>$20985.00</td>
-                                        <td>ALG</td>
-                                        <td>NA</td>
-                                        <td>$20985.00</td>
-                                        <td>Y</td>
-                                        <td>Y</td>
-                                        <td>N</td>
-                                        <td class="view-icon sticky-content" data-toggle="modal"
-                                            data-target="#quotesModal">
-                                            <img class="" src="../Images/View.png" alt="View Icon" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>02/29/16</td>
-                                        <td>37691</td>
-                                        <td>Matt Dayley</td>
-                                        <td>ALG</td>
-                                        <td>NA</td>
-                                        <td>$20985.00</td>
-                                        <td>ALG</td>
-                                        <td>NA</td>
-                                        <td>$20985.00</td>
-                                        <td>Y</td>
-                                        <td>Y</td>
-                                        <td>N</td>
-                                        <td class="view-icon sticky-content" data-toggle="modal"
-                                            data-target="#quotesModal">
-                                            <img class="" src="../Images/View.png" alt="View Icon" />
-                                        </td>
-                                    </tr>
+                                    </tr>*@
                                 </tbody>
                             </table>
                         </div>
@@ -703,25 +752,35 @@
     </footer>
 </section>
 
-
-
 <script type="text/javascript">
 
     $(document).ready(function () {
         const handleBtn = document.getElementById("advancedFilter");
         const handleDiv = document.getElementById("searchPanel");
+        const handleForm = document.getElementById("searchForm");
 
-        handleBtn.addEventListener('click', function handleClick() {
+        handleBtn.addEventListener('click', function handleClick(event) {
             if (handleDiv.style.visibility === 'hidden') {
                 handleDiv.style.visibility = 'visible';
             } else {
                 handleDiv.style.visibility = 'hidden';
             }
-        })
-    });
+            if (event.target.closest("searchPanel")) return handleDiv.classList.add("js-is-hidden");
+        });
 
+        $(document).on('click', '#btnClear', function () {
+
+            $("#companyId").val('');
+            $("#stateId").val('');
+            $("#cityId").val('');
+            $("#contactId").val('');
+            $("#zipId").val('');
+            $("#emailId").val('');
+        });
+    });
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+@*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
 
 <script type="text/javascript">
 
@@ -736,36 +795,110 @@
             success: function (result) {
                 for (var i = 0; i < result.count; i++) {
                     $('#tableQuotes').append(`<tr>
-                  <td class="row-index text-center">
-                            <p>Row ${result[i].Name}</p></td>
-                   <td class="text-center">
-                        <p>Row ${result[i].Title}</p></td>
-                   </tr>`);
-                });
-
-
+                          <td class="row-index text-center">
+                                    <p>Row ${result[i].Name}</p></td>
+                           <td class="text-center">
+                                <p>Row ${result[i].Title}</p></td>
+                           </tr>`);
+                }
+            }
+        });
     }
-                },
-    error: function () {
-        alert('error123');
-    }
-            });
-        }
-        
-
-        function loadContact(id){
-            $.ajax({
-                url:"/",
-                method:"GET"
-            })
-        }
-        function loadNotes(id){
-
-        }function loadQuotes(){
-
-        }
 </script>
 
 @section scripts{
-    <script src="~/js/datatable_file.js"></script>
+   <script src="~/js/datatable_file.js"></script>
 }
+
+<script>
+            function loadData(id) {
+            // function body
+            $.ajax({
+                      type: "get",
+                      data:{id:id},
+                      url: '@Url.Action("ContactDetails", "Corps")',
+                      dataType: "json",
+                      success: function (result) {
+                                    console.log(result);
+                                    debugger;
+                                    if(result == 0)
+                                    {
+                                        alert("No Data")
+                                        $('#Company').text('');
+                                        $('#Contact').text('');
+                                        $('#Title').text('');
+                                        $('#Suite').text('');
+                                        $('#State').text('');
+                                        $('#City').text('');
+                                        $('#phoneno').text('');
+                                        $('#altno').text('');
+                                        $('#Urlweb').text('');
+                                        $('#Zip').text('');
+                                        $('#Email').text('');
+                                        $('#Address').text('');
+                                        $('#Url').text('');
+
+                                        $('#RciNotes').html('');
+                                        $('#Ngnotes').html('');
+                                        $('#Misnotes').html('');
+                                        $('#Visotes').html('');
+                                        $('#tblQuotes').html('');
+                                   }
+                                   else{
+                                       $('#Company').text(result[0].company);
+                                       $('#Contact').text(result[0].contact);
+                                       $('#Title').text(result[0].title);
+                                       $('#Suite').text(result[0].address2);
+                                       $('#State').text(result[0].state);
+                                       $('#City').text(result[0].city);
+                                       $('#phoneno').text(result[0].phone);
+                                       $('#altno').text(result[0].altphone);
+                                       $('#Urlweb').text(result[0].urlweb);
+                                       $('#Zip').text(result[0].zip);
+                                       $('#Email').text(result[0].email);
+                                       $('#Address').text(result[0].address1);
+                                       $('#Url').text(result[0].urlcareers);
+
+                                       $('#Rcinotes').html(result[0].rcinotes_Pad);
+                                       $('#Ngnotes').html(result[0].ngnotes_Pad);
+                                       $('#Misnotes').html(result[0].misnotes_Pad);
+                                       $('#Visotes').html(result[0].visnotes_Pad);
+                                       GetQuotes(result);
+                                   }
+                                },
+                                error: function () {
+                                    alert('error123');
+                                }
+                            });
+
+        }
+        function GetQuotes(data)
+        {
+            $("#tblQuotes").html('');
+            var tr="";
+            $.each(data,function(i,item){
+                tr = "<tr><td>" + item.qcreatedat + "</td><td>" + item.qinvnum + "</td><td>" + item.qcontact + "</td><td>" + item.qcreateby + "</td><td>" + item.agcyid + "</td><td>" + item.qtotal + "</td><td>" + item.ordertaken + "</td><td>" + item.confirmed + "</td><td>" + item.cancelled + "</td>";
+
+                tr+="<td class='view-icon sticky-content' data-toggle='modal' data-target='#quotesModal'>"+ "<img class='' src='../Images/View.png' alt='View Icon' /></td></tr>";
+                console.log(tr);
+                $("#tblQuotes").append(tr);
+            });
+        }
+        $(document).ready(function (){
+            console.log('test1');
+            $('#Rcinotes').show();
+            $('#Ngnotes').hide();
+            $('#Misnotes').hide();
+            $('#Visotes').hide();
+
+        $(".radiobtn").change(function(){
+            console.log('test2');
+            var rId=$(this).attr("alt");
+            $('#Rcinotes').hide();
+            $('#Ngnotes').hide();
+            $('#Misnotes').hide();
+            $('#Visotes').hide();
+            $('#'+rId).show();
+        });
+});
+</script>

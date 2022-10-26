@@ -31,15 +31,15 @@ namespace MAQS.Web.Controllers
         public IActionResult Index(CorpList corp)
         {
             CorpList corpList = new CorpList();
-            
+
             List<SqlParameter> param = new List<SqlParameter>()
             {
                 new SqlParameter("@Company", corp.Company),
-                new SqlParameter("@City", corp.City),
-                new SqlParameter("@State", corp.State),
-                new SqlParameter("@Zip", corp.Zip),
-                new SqlParameter("@Email", corp.Email),
-                new SqlParameter("@Contact", corp.Contact),
+                new SqlParameter("@City", corp.City == null ? DBNull.Value : corp.City),
+                new SqlParameter("@State", corp.State == null ? DBNull.Value : corp.State),
+                new SqlParameter("@Zip", corp.Zip == null ? DBNull.Value : corp.Zip),
+                new SqlParameter("@Email", corp.Email == null ? DBNull.Value : corp.Email ),
+                new SqlParameter("@Contact", corp.Contact == null ? DBNull.Value : corp.Contact ),
             };
 
             string StroedProc = " EXEC [MAQS_SearchResult]@Company,@City,@State,@Zip,@Email,@Contact";
@@ -48,6 +48,14 @@ namespace MAQS.Web.Controllers
             corpList.corps = corpResult;
 
             return View(corpList);
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<ContactDetails>> ContactDetails([FromQuery] Guid id)
+        {
+            var contactdetails = await _context.ContactDetailss.FromSqlInterpolated($"Exec MAQS_ContactNotesQuotes @corpid= {id}").ToListAsync();
+
+            return contactdetails;
         }
 
 

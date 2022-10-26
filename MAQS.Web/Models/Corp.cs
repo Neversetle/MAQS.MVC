@@ -52,7 +52,6 @@ namespace MAQS.Web.Models
 
     public class CorpList
     {
-        [Required]
         public string? Company { get; set; }
         public string? Contact { get; set; }
         public string? City { get; set; }
@@ -76,8 +75,7 @@ namespace MAQS.Web.Models
         public string? Email { get; set; }
         public string? Title { get; set; }
         public string? Address1 { get; set; }
-
-
+        
     }
 
 
