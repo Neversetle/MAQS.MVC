@@ -31,6 +31,8 @@ namespace MAQS.Web.Models
         public virtual DbSet<TblNb> TblNbs { get; set; } = null!;
         public virtual DbSet<Visnote> Visnotes { get; set; } = null!;
         public virtual DbSet<ContactDetails> ContactDetailss { get; set; } = null!;
+        public virtual DbSet<QuotesPopup> QuotesPopups { get; set; } = null!;
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

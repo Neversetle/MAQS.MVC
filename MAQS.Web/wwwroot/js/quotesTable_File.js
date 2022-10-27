@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#dataTableData').DataTable({
+    $('#quoteTableData').DataTable({
 
     });
 });

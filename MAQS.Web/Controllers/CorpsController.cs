@@ -49,7 +49,7 @@ namespace MAQS.Web.Controllers
 
             return View(corpList);
         }
-
+        
         [HttpGet]
         public async Task<IEnumerable<ContactDetails>> ContactDetails([FromQuery] Guid id)
         {
@@ -57,6 +57,31 @@ namespace MAQS.Web.Controllers
 
             return contactdetails;
         }
+
+        [HttpGet]
+        public async Task<IEnumerable<QuotesPopup>> QuotesPopup([FromQuery] int id)
+        {
+            var quotespopup = new List<QuotesPopup>();
+            try {
+                List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@quotenum", id)
+            };
+
+                string StroedProc = " EXEC [MAQS_ModalPopup]@quotenum";
+
+                quotespopup = await _context.QuotesPopups.FromSqlRaw(StroedProc, param.ToArray()).ToListAsync();
+
+            }
+            catch (Exception e) { 
+                
+            }
+            return quotespopup;
+
+        }
+        [HttpPost]
+        
+
 
 
         // GET: Corps/Details/5

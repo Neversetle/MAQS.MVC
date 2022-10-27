@@ -5,7 +5,7 @@ namespace MAQS.Web.Models
     public class ContactDetails
     {
         [Key]
-        public string Company { get; set; }
+        public string? Company { get; set; }
         public string? Contact { get; set; }
         public string? Title { get; set; }
 
@@ -33,6 +33,10 @@ namespace MAQS.Web.Models
         public double? Qtotal { get; set; }
         public bool? Confirmed { get; set; }
         public bool? Cancelled { get; set; }
+        public int? Quotenum { get; set; }
+        public DateTime? Qcreatedat { get; set; }
+        public string? Qcreateby { get; set; }
+        public bool? Ordertaken { get; set; }
 
     }
 }
