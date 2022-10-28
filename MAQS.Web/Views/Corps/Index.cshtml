@@ -13,7 +13,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
-
                     <div>
                         <form method="post" asp-action="Index" asp-controller="Corps">
                             <input asp-for="@Model.Company" id="companyId" class="SearchBar" placeholder="Search by company name, contact, city, state, zip, code ... etc" />
@@ -21,7 +20,6 @@
                         <button class="modal-button">
                             <img class="filter" src="../Images/Vector.png" id="advancedFilter" />
                         </button>
-
                     </div>
 
                     <div class="search-box" id="searchPanel">
@@ -69,8 +67,6 @@
                                 <div class="row">
                                     <div class="col-sm-12 text-right">
                                         <button class="btn maqs-secondary-btn" id="btnClear"  >Clear</button>
-                                        @*<input type="button" class="btn maqs-secondary-btn" id="btnClear"  value="Clear"/>*@
-                                        @*<input type="submit" class="btn maqs-primary-btn" id="applyBtn" value="Apply" />*@
                                         <button type="submit" class="btn maqs-primary-btn" id="applyBtn">Apply</button>
                                     </div>
                                 </div>
@@ -130,7 +126,7 @@
                 <div class="col-lg-6">
                     <div class="contact-container">
                         <p>Contact</p>
-                        <div class="contact-inner-container scrollbar-style" >
+                        <div class="contact-inner-container scrollbar-style" id="contactContainer">
                         <table>
                             <tbody>
                                 <tr>
@@ -179,7 +175,7 @@
                             <div class="col-lg-4 notes-title">
                                 <p>Notes</p>
                             </div>
-                            <div class="col-lg-8 text-right checkbox-name">
+                            <div class="col-lg-8 text-right checkbox-name" id="radioButtonDiv">
                                 <div class="form-check form-check-inline">
                                     <input class="radiobtn" type="radio" id="rci" name="rbtn" alt="Rcinotes" value="RCI" checked="checked" />
                                     <p class="form-check-label">RCI</p>
@@ -199,7 +195,7 @@
                             </div>
                         </div>
                         
-                        <div class="notes-scrollbar scrollbar-style">
+                        <div class="notes-scrollbar scrollbar-style" id="notesContainer">
                             <div id="Rcinotes">
                             </div>
                             <div id="Ngnotes">
@@ -216,11 +212,11 @@
                             <div class="col-lg-6">
                                 <p>Quotes</p>
                             </div>
-                            <div class="col-lg-6 text-right">
+                            @*<div class="col-lg-6 text-right">
                                 <input type="text" class="company-search maqs-input-field" placeholder="Search" />
-                            </div>
+                            </div>*@
                         </div>
-                        <div class="quotes-inner-container scrollbar-style">
+                        <div class="quotes-inner-container scrollbar-style" id="quotesContainer">
                             <table id="quoteTableData">
                                 <thead>
                                     <tr>
@@ -262,23 +258,23 @@
                                         <div class="col-lg-3">
                                             <table>
                                                 <tr>
-                                                    <th>Company</th>
+                                                    <td>Company</td>
                                                     <td id="Qcompany"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Suite</th>
+                                                    <td>Suite</td>
                                                     <td id="Qconad2"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>City</th>
+                                                    <td>City</td>
                                                     <td id="Qconcity"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>State</th>
+                                                    <td>State</td>
                                                     <td id="Qconst"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>URL</th>
+                                                    <td>URL</td>
                                                     <td id="Qconurl"></td>
                                                 </tr>
                                             </table>
@@ -286,23 +282,23 @@
                                         <div class="col-lg-3">
                                             <table>
                                                 <tr>
-                                                    <th>Created By</th>
+                                                    <td>Created By</td>
                                                     <td id="Qcreateby"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Uploaded By</th>
+                                                    <td>Uploaded By</td>
                                                     <td id="Qupdtby"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Confirmed By</th>
+                                                    <td>Confirmed By</td>
                                                     <td id="Qconfby"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Canceled By</th>
+                                                    <td>Canceled By</td>
                                                     <td id="Qcancby"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>URL</th>
+                                                    <td>URL</td>
                                                     <td id="Qconurl"></td>
                                                 </tr>
                                             </table>
@@ -310,19 +306,19 @@
                                         <div class="col-lg-3">
                                             <table>
                                                 <tr>
-                                                    <th>Quote #</th>
+                                                    <td>Quote #</td>
                                                     <td id="Quotenum"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Invoice #</th>
+                                                    <td>Invoice #</td>
                                                     <td id="Qinvnum"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Address</th>
+                                                    <td>Address</td>
                                                     <td id="Qconad1"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Email ID</th>
+                                                    <td>Email ID</td>
                                                     <td id="Qconemail"></td>
                                                 </tr>
                                             </table>
@@ -330,19 +326,19 @@
                                         <div class="col-lg-3">
                                             <table>
                                                 <tr>
-                                                    <th>Contact</th>
+                                                    <td>Contact</td>
                                                     <td id="Qcontact"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Tel</th>
+                                                    <td>Tel</td>
                                                     <td id="Qconphon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Fax</th>
+                                                    <td>Fax</td>
                                                     <td id="Qconfax"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Zip Code</th>
+                                                    <td>Zip Code</td>
                                                     <td id="Qconzip"></td>
                                                 </tr>
                                             </table>
@@ -389,7 +385,7 @@
                                                                 <td>
                                                                     <p>Total@List+color</p>
                                                                 </td>
-                                                                <td id="Qtotallist"><input type="text" placeholder="" /></td>
+                                                                <td id="Qtotallist"><input type="text" placeholder="" disabled /></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
@@ -407,7 +403,7 @@
                                                                 <td>
                                                                     <p>Additional $ disc.</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" /></td>
+                                                                <td><input type="text" placeholder="" disabled /></td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -417,19 +413,19 @@
                                                                 <td>
                                                                     <p>Total Discounts</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" /></td>
+                                                                <td><input type="text" placeholder="" disabled /></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Total before agcy. Disc.</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" /></td>
+                                                                <td><input type="text" placeholder="" disabled /></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Agency Disc</p>
                                                                 </td>
-                                                                <td id=""><input type="text" placeholder="" /></td>
+                                                                <td id=""><input type="text" placeholder="" disabled /></td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -438,7 +434,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="total-result">
-                                                            <p>Total Sale <input type="text" placeholder="" id="Qtotal2"/></p>
+                                                            <p>Total Sale <input type="text" placeholder="" id="Qtotal2" disabled /></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -505,36 +501,12 @@
 
 
 @section scripts{
-   <script src="~/js/datatable_file.js"></script>
+    <script src="~/js/datatable_file.js"></script>
+    <script src="~/js/quotestable_file.js"></script>
 }
-@*
-    <script type="text/javascript">
-
-        function loadData(id) {
-            data = { CorpId: id }
-            var tableQuotes = document.getElementById("tblQuotes")
-            $.ajax({
-                type: "POST",
-                data: data,
-                url: '@Url.Action("GetData", "Corps")',
-                dataType: "json",
-                success: function (result) {
-                    for (var i = 0; i < result.count; i++) {
-                        $('#tableQuotes').append(`<tr>
-                                  <td class="row-index text-center">
-                                            <p>Row ${result[i].Name}</p></td>
-                                   <td class="text-center">
-                                        <p>Row ${result[i].Title}</p></td>
-                                   </tr>`);
-                    }
-                }
-            });
-        }
-
-    </script>*@
 
 <script>
-            function loadData(id) {
+        function loadData(id) {
             // function body
             $.ajax({
                       type: "get",
@@ -542,8 +514,7 @@
                       url: '@Url.Action("ContactDetails", "Corps")',
                       dataType: "json",
                       success: function (result) {
-                                    console.log(result);
-                                    debugger;
+                                    
                                     if(result == 0)
                                     {
                                         alert("No Data")
@@ -568,6 +539,10 @@
                                         $('#tblQuotes').html('');
                                    }
                                    else{
+                                       $('#contactContainer').show();
+                                       $('#radioButtonDiv').show();
+                                       $('#notesContainer').show();
+                                       $('#quotesContainer').show();
                                        $('#Company').text(result[0].company);
                                        $('#Contact').text(result[0].contact);
                                        $('#Title').text(result[0].title);
@@ -587,6 +562,7 @@
                                        $('#Misnotes').html(result[0].misnotes_Pad);
                                        $('#Visotes').html(result[0].visnotes_Pad);
                                        GetQuotes(result);
+                                       console.log(result);
                                    }
                                 },
                                 error: function () {
@@ -604,8 +580,6 @@
                 url: '@Url.Action("QuotesPopup", "Corps")',
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
-                    debugger;
                     if (result == 0) {
                         alert("No Data")
                     }
@@ -649,31 +623,37 @@
 
         function GetQuotes(data)
         {
-            $("#tblQuotes").html('');
-            var tr="";
+            //$("#tblQuotes").html('');
+            var tr;
+            var bhargva;
+            //console.log(data)
             $.each(data,function(i,item){
-                tr = "<tr><td>" + item.qcreatedat + "</td><td>" + item.qinvnum + "</td><td>" + item.qcontact + "</td><td>" + item.qcreateby + "</td><td>" + item.agcyid + "</td><td>" + item.qtotal + "</td><td>" + item.ordertaken + "</td><td>" + item.confirmed + "</td><td>" + item.cancelled + "</td>";
 
-                tr += "<td class='view-icon sticky-content'  data-toggle='modal' data-target='#quotesModal'>" + "<img class='quotesPopup' quoteId=" + item.quotenum + " src='../Images/View.png' alt='View Icon' /></td></tr>";
-                console.log(tr);
-                $("#tblQuotes").append(tr);
+                tr += "<tr><td>" + item['qcreatedat'] + "</td><td>" + item['qinvnum'] + "</td><td>" + item['qcontact'] + "</td><td>" + item['qcreateby'] + "</td><td>" + item['agcyid'] + "</td><td>" + item['qtotal'] + "</td><td>" + item['ordertaken'] + "</td><td>" + item['confirmed'] + "</td><td>" + item['cancelled'] + "</td>";
+
+                tr += "<td class='view-icon sticky-content'  data-toggle='modal' data-target='#quotesModal'>" + "<img class='quotesPopup' quoteId=" + item['quotenum'] + " src='../Images/View.png' alt='View Icon' /></td></tr>";
             });
+            $('#tblQuotes').html(tr);
         }
+
         $(document).ready(function (){
+
+            $('#contactContainer').hide();
+            $('#radioButtonDiv').hide();
+            $('#notesContainer').hide();
+            $('#quotesContainer').hide();
 
             $("#quoteTableData").on("click", ".quotesPopup", function(){
                 var quoteId = $(this).attr("quoteId");
                 loadPopup(quoteId);
             });
 
-            console.log('test1');
             $('#Rcinotes').show();
             $('#Ngnotes').hide();
             $('#Misnotes').hide();
             $('#Visotes').hide();
 
         $(".radiobtn").change(function(){
-            console.log('test2');
             var rId=$(this).attr("alt");
             $('#Rcinotes').hide();
             $('#Ngnotes').hide();

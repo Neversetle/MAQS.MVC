@@ -51,10 +51,26 @@ namespace MAQS.Web.Controllers
         }
         
         [HttpGet]
-        public async Task<IEnumerable<ContactDetails>> ContactDetails([FromQuery] Guid id)
+        public IEnumerable<ContactDetails> ContactDetails([FromQuery] Guid id)
         {
-            var contactdetails = await _context.ContactDetailss.FromSqlInterpolated($"Exec MAQS_ContactNotesQuotes @corpid= {id}").ToListAsync();
 
+            var contactdetails = new List<ContactDetails>();
+            try
+            {
+                List<SqlParameter> param = new List<SqlParameter>()
+            {
+                new SqlParameter("@corpid", id)
+            };
+
+                string StroedProc = " EXEC [MAQS_ContactNotesQuotes]@corpid";
+
+                contactdetails =  _context.ContactDetailss.FromSqlRaw(StroedProc, param.ToArray()).ToList();
+
+            }
+            catch (Exception e)
+            {
+
+            }
             return contactdetails;
         }
 
