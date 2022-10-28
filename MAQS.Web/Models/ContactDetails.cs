@@ -5,6 +5,7 @@ namespace MAQS.Web.Models
     public class ContactDetails
     {
         [Key]
+        public long rowno { get; set; }
         public string? Company { get; set; }
         public string? Contact { get; set; }
         public string? Title { get; set; }

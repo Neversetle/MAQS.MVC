@@ -623,12 +623,13 @@
 
         function GetQuotes(data)
         {
+            console.log(data);
             //$("#tblQuotes").html('');
             var tr;
             var bhargva;
             //console.log(data)
             $.each(data,function(i,item){
-
+                console.log(item['qcontact']);
                 tr += "<tr><td>" + item['qcreatedat'] + "</td><td>" + item['qinvnum'] + "</td><td>" + item['qcontact'] + "</td><td>" + item['qcreateby'] + "</td><td>" + item['agcyid'] + "</td><td>" + item['qtotal'] + "</td><td>" + item['ordertaken'] + "</td><td>" + item['confirmed'] + "</td><td>" + item['cancelled'] + "</td>";
 
                 tr += "<td class='view-icon sticky-content'  data-toggle='modal' data-target='#quotesModal'>" + "<img class='quotesPopup' quoteId=" + item['quotenum'] + " src='../Images/View.png' alt='View Icon' /></td></tr>";
