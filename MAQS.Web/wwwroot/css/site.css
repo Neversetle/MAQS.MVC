@@ -728,26 +728,28 @@ html {
 }
 
 .displayAsHeader {
-    width: 70%;
+    min-width: 100px;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: #333333;
+}
+
+.row-margin{
     margin-bottom: 15px;
 }
 
 .displayRecord {
-    width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #555555;
-    margin-bottom: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+}
+
+.line-clamp{
+    word-break:break-word;
 }
 
 .totalTableRecord {

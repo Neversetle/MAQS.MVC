@@ -1,7 +1,7 @@
 ﻿@model MAQS.Web.Models.CorpList
 
 @{
-   // ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetQuote";
    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -207,11 +207,17 @@
 
                     <div class="quotes-container">
                         <div class="row quotes-head">
-                            <div class="col-lg-6">
+                            <div class="col-lg-2">
                                 <p>Quotes</p>
                             </div>
-                            <div class="col-lg-6 text-right">
-                                <input type="text"  class="company-search maqs-input-field" placeholder="Search" />
+                            <div class="col-lg-10 text-right">
+                                <form method="get" asp-action="QuoteSearch">
+                                    <p id="quotesSearch">
+                                        <input type="search" id="search_query" class="company-search maqs-input-field" placeholder="Search" name="quoteSearch" value="@ViewData["GetQuote"]" />
+                                        <button class="btn btn-primary" style="width:65px;height:30px;">Search</button>
+                                        @*<a asp-action="QuoteSearch">Get All Records</a>*@
+                                    </p>
+                                </form>
                             </div>
                         </div>
                         <div class="quotes-inner-container scrollbar-style" id="quotesContainer">
@@ -254,28 +260,28 @@
                                 <div class="modal-body quotes-modal-data" id="tblCompanyQuotes">
                                     <div class="row modal-data">
                                         <div class="col-lg-3">
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader" >
                                                     Company 
                                                 </div>
-                                                <div id="Qcompany" class="displayRecord" data-toggle="tooltip" data-placement="top" title="Company">
+                                                <div id="Qcompany" class="displayRecord line-clamp">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Suite
                                                 </div>
                                                 <div id="Qconad2" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     City
                                                 </div>
                                                 <div id="Qconcity" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     State
                                                 </div>
@@ -283,7 +289,7 @@
                                                     
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     URL
                                                 </div>
@@ -292,28 +298,28 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Created By
                                                 </div>
                                                 <div id="Qcreateby" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Uploaded By
                                                 </div>
                                                 <div id="Qupdtby" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Confirmed By
                                                 </div>
                                                 <div id="Qconfby" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Canceled By
                                                 </div>
@@ -323,58 +329,58 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Quote #
                                                 </div>
                                                 <div id="Quotenum" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Invoice #
                                                 </div>
                                                 <div id="Qinvnum" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Address
                                                 </div>
-                                                <div id="Qconad1" class="displayRecord">
+                                                <div id="Qconad1" class="displayRecord line-clamp">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Email ID
                                                 </div>
-                                                <div id="Qconemail" class="displayRecord">
+                                                <div id="Qconemail" class="displayRecord line-clamp">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Contact
                                                 </div>
                                                 <div id="Qcontact" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Tel
                                                 </div>
                                                 <div id="Qconphon" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Fax
                                                 </div>
                                                 <div id="Qconfax" class="displayRecord">
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center">
+                                            <div class="d-flex row-margin">
                                                 <div class="displayAsHeader">
                                                     Zip Code
                                                 </div>
@@ -677,7 +683,7 @@
         $(document).ready(function (){
 
             //$.liveSearch({
-            //selectorContainer: "table",
+            //selectorContainer: "tbody",
             //selectorElementsToSearch: "tr",
             //selectorInputSearch: "input#search_query",
             //selectorHead: false,

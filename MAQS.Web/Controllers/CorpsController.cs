@@ -98,5 +98,17 @@ namespace MAQS.Web.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> QuoteSearch(string quoteSearch)
+        {
+            ViewData["GetQuote"] = quoteSearch;
+            var quoteQuery = from x in _context.ContactDetailss 
+                             select x;
+            if (!String.IsNullOrEmpty(quoteSearch)){
+                quoteQuery = quoteQuery.Where(x => x.Qcontact.Contains(quoteSearch) || x.Qcreateby.Contains(quoteSearch) || x.Agcyid.Contains(quoteSearch));
+            };
+            return View(await quoteQuery.AsNoTracking().ToListAsync());
+        }
+
     }
 }
