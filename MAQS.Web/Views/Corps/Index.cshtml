@@ -212,9 +212,9 @@
                             <div class="col-lg-6">
                                 <p>Quotes</p>
                             </div>
-                            @*<div class="col-lg-6 text-right">
-                                <input type="text" class="company-search maqs-input-field" placeholder="Search" />
-                            </div>*@
+                            <div class="col-lg-6 text-right">
+                                <input type="text"  class="company-search maqs-input-field" placeholder="Search" />
+                            </div>
                         </div>
                         <div class="quotes-inner-container scrollbar-style" id="quotesContainer">
                             <table id="quoteTableData">
@@ -254,94 +254,135 @@
                                     </div>
                                 </div>
                                 <div class="modal-body quotes-modal-data" id="tblCompanyQuotes">
-                                    <div class="row modal-data" >
+                                    <div class="row modal-data">
                                         <div class="col-lg-3">
-                                            <table>
-                                                <tr>
-                                                    <td>Company</td>
-                                                    <td id="Qcompany"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Suite</td>
-                                                    <td id="Qconad2"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>City</td>
-                                                    <td id="Qconcity"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>State</td>
-                                                    <td id="Qconst"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>URL</td>
-                                                    <td id="Qconurl"></td>
-                                                </tr>
-                                            </table>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader" >
+                                                    Company 
+                                                </div>
+                                                <div id="Qcompany" class="displayRecord" data-toggle="tooltip" data-placement="top" title="Company">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Suite
+                                                </div>
+                                                <div id="Qconad2" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    City
+                                                </div>
+                                                <div id="Qconcity" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    State
+                                                </div>
+                                                <div id="Qconst" class="displayRecord">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    URL
+                                                </div>
+                                                <div id="Qconurl" class="displayRecord">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <table>
-                                                <tr>
-                                                    <td>Created By</td>
-                                                    <td id="Qcreateby"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Uploaded By</td>
-                                                    <td id="Qupdtby"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Confirmed By</td>
-                                                    <td id="Qconfby"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Canceled By</td>
-                                                    <td id="Qcancby"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>URL</td>
-                                                    <td id="Qconurl"></td>
-                                                </tr>
-                                            </table>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Created By
+                                                </div>
+                                                <div id="Qcreateby" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Uploaded By
+                                                </div>
+                                                <div id="Qupdtby" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Confirmed By
+                                                </div>
+                                                <div id="Qconfby" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Canceled By
+                                                </div>
+                                                <div id="Qcancby" class="displayRecord">
+                                                    
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <table>
-                                                <tr>
-                                                    <td>Quote #</td>
-                                                    <td id="Quotenum"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Invoice #</td>
-                                                    <td id="Qinvnum"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Address</td>
-                                                    <td id="Qconad1"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Email ID</td>
-                                                    <td id="Qconemail"></td>
-                                                </tr>
-                                            </table>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Quote #
+                                                </div>
+                                                <div id="Quotenum" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Invoice #
+                                                </div>
+                                                <div id="Qinvnum" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Address
+                                                </div>
+                                                <div id="Qconad1" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Email ID
+                                                </div>
+                                                <div id="Qconemail" class="displayRecord">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <table>
-                                                <tr>
-                                                    <td>Contact</td>
-                                                    <td id="Qcontact"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tel</td>
-                                                    <td id="Qconphon"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Fax</td>
-                                                    <td id="Qconfax"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Zip Code</td>
-                                                    <td id="Qconzip"></td>
-                                                </tr>
-                                            </table>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Contact
+                                                </div>
+                                                <div id="Qcontact" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Tel
+                                                </div>
+                                                <div id="Qconphon" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Fax
+                                                </div>
+                                                <div id="Qconfax" class="displayRecord">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="displayAsHeader">
+                                                    Zip Code
+                                                </div>
+                                                <div id="Qconzip" class="displayRecord">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -368,42 +409,40 @@
                                                     <td id="Qmedtotal1"></td>
                                                     <td id="Qmedsubtotal2"></td>
                                                 </tr>
-                                                
+
                                             </thead>
                                         </table>
                                     </div>
 
                                     <div class="row">
-                                        
                                         <div class="col-lg-6">
                                             <div class="modal-total">
                                                 <div class="row ">
-
                                                     <div class="col-lg-6">
                                                         <table>
                                                             <tr>
                                                                 <td>
                                                                     <p>Total@List+color</p>
                                                                 </td>
-                                                                <td id="Qtotallist"><input type="text" placeholder="" disabled /></td>
+                                                                <td><p id="Qtotallist" class="totalTableRecord"></p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Total price disc.</p>
                                                                 </td>
-                                                                <td id=""><input type="text" placeholder="-" disabled/></td>
+                                                                <td><p class="totalTableRecord">-</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Total % disc</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="-" disabled/></td>
+                                                                <td><p class="totalTableRecord">-</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Additional $ disc.</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" disabled /></td>
+                                                                <td><p class="totalTableRecord">-</p></td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -413,29 +452,32 @@
                                                                 <td>
                                                                     <p>Total Discounts</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" disabled /></td>
+                                                                <td><p class="totalTableRecord">-</p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Total before agcy. Disc.</p>
                                                                 </td>
-                                                                <td><input type="text" placeholder="" disabled /></td>
+                                                                <td><p class="totalTableRecord"></p></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     <p>Agency Disc</p>
                                                                 </td>
-                                                                <td id=""><input type="text" placeholder="" disabled /></td>
+                                                                <td><p class="totalTableRecord"></p></td>
                                                             </tr>
                                                         </table>
                                                     </div>
                                                 </div>
                                                 <hr />
                                                 <div class="row">
-                                                    <div class="col-lg-12">
+                                                    <div class="col-lg-8">
                                                         <div class="total-result">
-                                                            <p>Total Sale <input type="text" placeholder="" id="Qtotal2" disabled /></p>
+                                                            <p>Total Sale </p>
                                                         </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <p id="Qtotal2" class="totalSale"></p>
                                                     </div>
                                                 </div>
 
@@ -497,12 +539,10 @@
     });
 </script>
 
-@*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
-
-
 @section scripts{
     <script src="~/js/datatable_file.js"></script>
-    <script src="~/js/quotestable_file.js"></script>
+    @*<script src="~/js/jquery.live.search.min.js"></script>*@
+    @*<script src="~/js/fancytable.min.js"></script>*@
 }
 
 <script>
@@ -543,6 +583,7 @@
                                        $('#radioButtonDiv').show();
                                        $('#notesContainer').show();
                                        $('#quotesContainer').show();
+                                       $('#quotesSearch').show();
                                        $('#Company').text(result[0].company);
                                        $('#Contact').text(result[0].contact);
                                        $('#Title').text(result[0].title);
@@ -623,13 +664,12 @@
 
         function GetQuotes(data)
         {
-            console.log(data);
-            //$("#tblQuotes").html('');
+            //console.log(data);
+            $("#tblQuotes").html('');
             var tr;
-            var bhargva;
             //console.log(data)
             $.each(data,function(i,item){
-                console.log(item['qcontact']);
+                //console.log(item['qcontact']);
                 tr += "<tr><td>" + item['qcreatedat'] + "</td><td>" + item['qinvnum'] + "</td><td>" + item['qcontact'] + "</td><td>" + item['qcreateby'] + "</td><td>" + item['agcyid'] + "</td><td>" + item['qtotal'] + "</td><td>" + item['ordertaken'] + "</td><td>" + item['confirmed'] + "</td><td>" + item['cancelled'] + "</td>";
 
                 tr += "<td class='view-icon sticky-content'  data-toggle='modal' data-target='#quotesModal'>" + "<img class='quotesPopup' quoteId=" + item['quotenum'] + " src='../Images/View.png' alt='View Icon' /></td></tr>";
@@ -639,10 +679,30 @@
 
         $(document).ready(function (){
 
+            //$.liveSearch({
+            //selectorContainer: "table",
+            //selectorElementsToSearch: "tr",
+            //selectorInputSearch: "input#search_query",
+            //selectorHead: false,
+            //selectorToHide: false,
+            //minCharacters: 3,
+            //typeDelay: 500,
+            //ajaxFilter: true,
+            //ajaxCallback: false
+            //});
+
+  //          $(".sampleTable").fancyTable({
+		//	sortColumn:0,
+		//	pagination: true,
+		//	perPage:10,
+		//	globalSearch:true;
+		//});
+
             $('#contactContainer').hide();
             $('#radioButtonDiv').hide();
             $('#notesContainer').hide();
             $('#quotesContainer').hide();
+            $('#quotesSearch').hide();
 
             $("#quoteTableData").on("click", ".quotesPopup", function(){
                 var quoteId = $(this).attr("quoteId");
@@ -662,5 +722,7 @@
             $('#Visotes').hide();
             $('#'+rId).show();
         });
+
 });
+
 </script>

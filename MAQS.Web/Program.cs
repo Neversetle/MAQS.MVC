@@ -1,4 +1,3 @@
-using MAQS.Web.Data;
 using MAQS.Web.Models;
 using Microsoft.EntityFrameworkCore;
 

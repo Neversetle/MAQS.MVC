@@ -616,7 +616,6 @@ html {
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
-        text-align: right;
         color: #555555;
     }
 
@@ -726,4 +725,51 @@ html {
 
 .quotes-inner-container table tbody tr:nth-child(odd) .sticky-content {
     background-color: white;
+}
+
+.displayAsHeader {
+    width: 70%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.displayRecord {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #555555;
+    margin-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.totalTableRecord {
+    width: 100px;
+    height: 27px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 4px;
+}
+
+.totalSale {
+    width: 100px;
+    height: 27px;
+    background: #FDE3E3;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 4px;
 }
