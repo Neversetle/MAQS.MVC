@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MAQS.Web
 build_property.RootNamespace = MAQS.Web
-build_property.ProjectDir = D:\Mouri\RCI\update_RCI\MAQS.Web\
+build_property.ProjectDir = D:\RCI\MAQS.MVC\MAQS.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Mouri\RCI\update_RCI\MAQS.Web
+build_property.MSBuildProjectDirectory = D:\RCI\MAQS.MVC\MAQS.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Create.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Corps/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Delete.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Corps/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Details.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Corps/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Edit.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Corps/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Corps/Index.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Corps/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/Error.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/_HeaderView.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Shared/_HeaderView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/_scriptsView.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Shared/_scriptsView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zY3JpcHRzVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/_ViewImports.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/_ViewStart.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Mouri/RCI/update_RCI/MAQS.Web/Views/Shared/_Layout.cshtml]
+[D:/RCI/MAQS.MVC/MAQS.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-prbwlzxvdb
