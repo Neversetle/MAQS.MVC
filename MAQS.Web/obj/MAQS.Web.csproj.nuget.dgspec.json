@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\MAQS.Web.csproj": {}
+    "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\MAQS.Web.csproj": {}
   },
   "projects": {
-    "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\MAQS.Web.csproj": {
+    "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\MAQS.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\MAQS.Web.csproj",
+        "projectUniqueName": "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\MAQS.Web.csproj",
         "projectName": "MAQS.Web",
-        "projectPath": "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\MAQS.Web.csproj",
+        "projectPath": "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\MAQS.Web.csproj",
         "packagesPath": "C:\\Users\\meand\\.nuget\\packages\\",
-        "outputPath": "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\obj\\",
+        "outputPath": "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\meand\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "luLYXnsBQC61s7vv6AueshaQRWuZEjOrb+1Iub7gxzijKqrXRWvAZjFObKx7zqm2lK/obhyONnVZysMp3c4zDw==",
+  "dgSpecHash": "Rl/25H94FfW1pVCm0911ojeyz93wHpr55ls2V1Wd0Q73V3pkNazkCtoAjr9jURFGy7l8dgZZPG9XMFpzg5wxdQ==",
   "success": true,
-  "projectFilePath": "D:\\Mouri\\RCI\\update_RCI\\MAQS.Web\\MAQS.Web.csproj",
+  "projectFilePath": "D:\\Mouri\\RCI\\Full_06\\MAQS.Web\\MAQS.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\meand\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\meand\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
